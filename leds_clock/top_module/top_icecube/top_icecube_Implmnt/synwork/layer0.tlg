@@ -1,0 +1,7 @@
+Selecting top level module top_module
+@N: CG364 :"C:\HDL\IceStick\Projects\leds_clock\Mhz_to_1hz\Mhz_to_1hz.v":1:7:1:16|Synthesizing module Mhz_to_1hz in library work.
+
+@N: CG364 :"C:\HDL\IceStick\Projects\leds_clock\blink_leds\blink_leds.v":1:7:1:16|Synthesizing module blink_leds in library work.
+
+@N: CG364 :"C:\HDL\IceStick\Projects\leds_clock\top_module\leds_clock.v":1:7:1:16|Synthesizing module top_module in library work.
+

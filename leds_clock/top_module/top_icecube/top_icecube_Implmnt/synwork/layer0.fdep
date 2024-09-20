@@ -1,0 +1,27 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\HDL\\IceStick\\Projects\\leds_clock\\top_module\\top_icecube\\top_icecube_Implmnt\\synwork\\top_icecube_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\HDL\\IceStick\\Projects\\leds_clock\\top_module\\top_icecube\\|-I|C:\\HDL\\IceStick\\IceCube\\synpbase\\lib|-v2001|-devicelib|C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work|-lib|work|-lib|work"
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\bin64\\c_ver.exe":1725993069
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\generic\\sb_ice40.v":1725993071
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\hypermods.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\umr_capim.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\scemi_objects.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\scemi_pipes.svh":1725993073
+#CUR:"C:\\HDL\\IceStick\\Projects\\leds_clock\\top_module\\leds_clock.v":1726791974
+#CUR:"C:\\HDL\\IceStick\\Projects\\leds_clock\\blink_leds\\blink_leds.v":1726616275
+#CUR:"C:\\HDL\\IceStick\\Projects\\leds_clock\\Mhz_to_1hz\\Mhz_to_1hz.v":1726709390
+#numinternalfiles:5
+#defaultlanguage:verilog
+0			"C:\HDL\IceStick\Projects\leds_clock\top_module\leds_clock.v" verilog
+1			"C:\HDL\IceStick\Projects\leds_clock\blink_leds\blink_leds.v" verilog
+2			"C:\HDL\IceStick\Projects\leds_clock\Mhz_to_1hz\Mhz_to_1hz.v" verilog
+#Dependency Lists(Uses List)
+0 2 1
+1 -1
+2 -1
+#Dependency Lists(Users Of)
+0 -1
+1 0
+2 0
+#Design Unit to File Association
+module work Mhz_to_1hz 2
+module work blink_leds 1
+module work top_module 0

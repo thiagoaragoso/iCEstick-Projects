@@ -1,0 +1,121 @@
+Running in Lattice mode
+
+Starting:    C:\HDL\IceStick\IceCube\synpbase\bin64\mbin\synplify.exe
+Install:     C:\HDL\IceStick\IceCube\synpbase
+Hostname:    THIAGO-ACER
+Date:        Thu Sep 19 18:06:44 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro Khz_to_1hz_icecube_syn.prj
+ProductType: synplify_pro
+
+
+
+
+log file: "C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srr"
+Running: Khz_to_1hz_icecube_Implmnt in foreground
+
+Running Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: compile (Compile) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:44 2024
+
+Running: compile_flow (Compile Process) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:44 2024
+
+Running: compiler (Compile Input) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:44 2024
+Copied C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\synwork\Khz_to_1hz_icecube_comp.srs to C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srs
+
+compiler completed
+# Thu Sep 19 18:06:46 2024
+
+Return Code: 0
+Run Time:00h:00m:02s
+
+Running: multi_srs_gen (Multi-srs Generator) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:46 2024
+
+multi_srs_gen completed
+# Thu Sep 19 18:06:46 2024
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\synwork\Khz_to_1hz_icecube_mult.srs to C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srs
+Complete: Compile Process on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: premap (Pre-mapping) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:46 2024
+
+premap completed with warnings
+# Thu Sep 19 18:06:47 2024
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Compile on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: map (Map) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:47 2024
+
+Running: fpga_mapper (Map & Optimize) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:06:47 2024
+Copied C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\synwork\Khz_to_1hz_icecube_m.srm to C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srm
+
+fpga_mapper completed with warnings
+# Thu Sep 19 18:06:58 2024
+
+Return Code: 1
+Run Time:00h:00m:11s
+Complete: Map on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+Complete: Logic Synthesis on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+New HDL Analyst: enabled
+log file: "C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srr"
+Running: Khz_to_1hz_icecube_Implmnt in foreground
+
+Running Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: compile (Compile) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:04 2024
+
+Running: compile_flow (Compile Process) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:04 2024
+
+Running: compiler (Compile Input) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:04 2024
+
+compiler completed
+# Thu Sep 19 18:07:04 2024
+
+Return Code: 0
+Run Time:00h:00m:00s
+
+Running: multi_srs_gen (Multi-srs Generator) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:04 2024
+Up-To-Date: multi_srs_gen. No run necessary
+Complete: Compile Process on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: premap (Pre-mapping) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:04 2024
+
+premap completed with warnings
+# Thu Sep 19 18:07:05 2024
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Compile on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+
+Running: map (Map) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:05 2024
+
+Running: fpga_mapper (Map & Optimize) on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+# Thu Sep 19 18:07:05 2024
+Copied C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\synwork\Khz_to_1hz_icecube_m.srm to C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz_icecube\Khz_to_1hz_icecube_Implmnt\Khz_to_1hz_icecube.srm
+
+fpga_mapper completed with warnings
+# Thu Sep 19 18:07:06 2024
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Map on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+Complete: Logic Synthesis on Khz_to_1hz_icecube_syn|Khz_to_1hz_icecube_Implmnt
+exit status=0

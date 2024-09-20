@@ -1,0 +1,12 @@
+@P:  Worst Slack : -1.169
+@P:  Khz_to_1hz|clk - Estimated Frequency : 128.4 MHz
+@P:  Khz_to_1hz|clk - Requested Frequency : 151.0 MHz
+@P:  Khz_to_1hz|clk - Estimated Period : 7.790
+@P:  Khz_to_1hz|clk - Requested Period : 6.622
+@P:  Khz_to_1hz|clk - Slack : -1.169
+@P: Khz_to_1hz Part : ice40hx1ktq144
+@P: Khz_to_1hz I/O primitives : 3
+@P: Khz_to_1hz I/O Register bits : 0
+@P: Khz_to_1hz Register bits (Non I/O) : 14 (1%)
+@P: Khz_to_1hz Total Luts : 19 (1%)
+@P:  CPU Time : 0h:00m:00s

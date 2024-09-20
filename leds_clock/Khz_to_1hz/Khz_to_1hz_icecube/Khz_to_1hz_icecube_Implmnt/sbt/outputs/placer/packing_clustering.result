@@ -1,0 +1,31 @@
+ble_pack un5_counter_cry_1_c_LC_25 {un5_counter_cry_1_c}
+ble_pack counter[2]_LC_10 {counter[2], un5_counter_cry_2_c, counter_RNO[2]}
+ble_pack counter[3]_LC_11 {counter[3], un5_counter_cry_3_c, counter_RNO[3]}
+ble_pack un5_counter_cry_3_THRU_LUT4_0_LC_19 {un5_counter_cry_4_c, un5_counter_cry_3_THRU_LUT4_0}
+ble_pack un5_counter_cry_4_THRU_LUT4_0_LC_20 {un5_counter_cry_5_c, un5_counter_cry_4_THRU_LUT4_0}
+ble_pack un5_counter_cry_5_THRU_LUT4_0_LC_21 {un5_counter_cry_6_c, un5_counter_cry_5_THRU_LUT4_0}
+ble_pack counter[7]_LC_15 {counter[7], un5_counter_cry_7_c, counter_RNO[7]}
+ble_pack un5_counter_cry_7_THRU_LUT4_0_LC_22 {un5_counter_cry_8_c, un5_counter_cry_7_THRU_LUT4_0}
+clb_pack PLB_0 {un5_counter_cry_1_c_LC_25, counter[2]_LC_10, counter[3]_LC_11, un5_counter_cry_3_THRU_LUT4_0_LC_19, un5_counter_cry_4_THRU_LUT4_0_LC_20, un5_counter_cry_5_THRU_LUT4_0_LC_21, counter[7]_LC_15, un5_counter_cry_7_THRU_LUT4_0_LC_22}
+ble_pack un5_counter_cry_8_THRU_LUT4_0_LC_23 {un5_counter_cry_9_c, un5_counter_cry_8_THRU_LUT4_0}
+ble_pack un5_counter_cry_9_THRU_LUT4_0_LC_24 {un5_counter_cry_10_c, un5_counter_cry_9_THRU_LUT4_0}
+ble_pack counter[11]_LC_8 {counter[11], un5_counter_cry_11_c, counter_RNO[11]}
+ble_pack counter[12]_LC_9 {counter[12], counter_RNO[12]}
+clb_pack PLB_1 {un5_counter_cry_8_THRU_LUT4_0_LC_23, un5_counter_cry_9_THRU_LUT4_0_LC_24, counter[11]_LC_8, counter[12]_LC_9}
+ble_pack counter_RNI9CJM[6]_LC_0 {counter_RNI9CJM[6]}
+ble_pack counter_RNIOBJM1[6]_LC_4 {counter_RNIOBJM1[6]}
+ble_pack counter[6]_LC_14 {counter[6], counter_RNO[6]}
+ble_pack counter[8]_LC_16 {counter[8], counter_RNO[8]}
+ble_pack counter[9]_LC_17 {counter[9], counter_RNO[9]}
+ble_pack counter[10]_LC_7 {counter[10], counter_RNO[10]}
+ble_pack counter[4]_LC_12 {counter[4], counter_RNO[4]}
+ble_pack counter_RNIFVVV[12]_LC_2 {counter_RNIFVVV[12]}
+clb_pack PLB_2 {counter_RNI9CJM[6]_LC_0, counter_RNIOBJM1[6]_LC_4, counter[6]_LC_14, counter[8]_LC_16, counter[9]_LC_17, counter[10]_LC_7, counter[4]_LC_12, counter_RNIFVVV[12]_LC_2}
+ble_pack counter_RNIB06D[1]_LC_1 {counter_RNIB06D[1]}
+ble_pack counter_RNIJDFG[0]_LC_3 {counter_RNIJDFG[0]}
+ble_pack counter[1]_LC_6 {counter[1], counter_RNO[1]}
+ble_pack counter[5]_LC_13 {counter[5], counter_RNO[5]}
+ble_pack counter[0]_LC_5 {counter[0], counter_RNO[0]}
+clb_pack PLB_3 {counter_RNIB06D[1]_LC_1, counter_RNIJDFG[0]_LC_3, counter[1]_LC_6, counter[5]_LC_13, counter[0]_LC_5}
+ble_pack enable_LC_18 {enable, enable_RNO}
+clb_pack PLB_4 {enable_LC_18}

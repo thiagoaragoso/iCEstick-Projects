@@ -1,0 +1,1 @@
+@W: MT529 :"c:\hdl\icestick\projects\khz_to_1hz\khz_to_1hz.v":9:2:9:7|Found inferred clock Khz_to_1hz|clk which controls 14 sequential elements including counter[12:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 

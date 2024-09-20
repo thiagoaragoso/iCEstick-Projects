@@ -1,0 +1,7 @@
+@N|Running in 64-bit mode
+@N|Running in 64-bit mode
+@N: CG364 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Synthesizing module blink_leds in library work.
+@N|Running in 64-bit mode
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+

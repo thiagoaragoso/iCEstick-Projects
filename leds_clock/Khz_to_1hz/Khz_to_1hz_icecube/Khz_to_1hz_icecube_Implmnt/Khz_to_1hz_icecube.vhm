@@ -1,0 +1,449 @@
+--
+-- Written by Synplicity
+-- Product Version "L-2016.09L+ice40"
+-- Program "Synplify Pro", Mapper "maplat, Build 1612R"
+-- Thu Sep 19 18:07:05 2024
+--
+
+--
+-- Written by Synplify Pro version Build 1612R
+-- Thu Sep 19 18:07:05 2024
+--
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library work;
+use work.vcomponent_vital.all; 
+use work.std_logic_SBT.all; 
+
+entity Khz_to_1hz is
+port(
+  clk :  in std_logic;
+  reset :  in std_logic;
+  enable :  out std_logic);
+end Khz_to_1hz;
+
+architecture beh of Khz_to_1hz is
+  signal COUNTER : std_logic_vector(12 downto 0);
+  signal COUNTER_RNO : std_logic_vector(11 downto 1);
+  signal COUNTER_I : std_logic_vector(0 to 0);
+  signal COUNTER_RNIFVVV : std_logic_vector(12 to 12);
+  signal COUNTER_RNIB06D : std_logic_vector(1 to 1);
+  signal NN_1 : std_logic ;
+  signal NN_2 : std_logic ;
+  signal CLK_INTERNAL : std_logic ;
+  signal RESET_C : std_logic ;
+  signal RESET_INTERNAL : std_logic ;
+  signal ENABLE_C : std_logic ;
+  signal ENABLE_3 : std_logic ;
+  signal UN5_COUNTER_CRY_1 : std_logic ;
+  signal UN5_COUNTER_CRY_2 : std_logic ;
+  signal UN5_COUNTER_CRY_3 : std_logic ;
+  signal UN5_COUNTER_CRY_4 : std_logic ;
+  signal UN5_COUNTER_CRY_5 : std_logic ;
+  signal UN5_COUNTER_CRY_6 : std_logic ;
+  signal UN5_COUNTER_CRY_7 : std_logic ;
+  signal UN5_COUNTER_CRY_8 : std_logic ;
+  signal UN5_COUNTER_CRY_9 : std_logic ;
+  signal UN5_COUNTER_CRY_10 : std_logic ;
+  signal UN5_COUNTER_CRY_11 : std_logic ;
+  signal COUNTERC : std_logic ;
+  signal COUNTERC_0 : std_logic ;
+  signal COUNTERC_1 : std_logic ;
+  signal COUNTERC_2 : std_logic ;
+  signal COUNTERC_3 : std_logic ;
+  signal COUNTERC_4 : std_logic ;
+  signal COUNTERC_5 : std_logic ;
+  signal UN1_COUNTER_3_8 : std_logic ;
+  signal UN1_COUNTER_3_9 : std_logic ;
+  signal ENABLE_S_1 : std_logic ;
+  signal ENABLE_1 : std_logic ;
+  signal CLK_C_G : std_logic ;
+  signal N_1 : std_logic ;
+  signal N_2 : std_logic ;
+  signal N_3 : std_logic ;
+  signal N_4 : std_logic ;
+  signal N_5 : std_logic ;
+begin
+CLK_IBUF_GB_IO: SB_GB_IO 
+generic map(
+  PIN_TYPE => "000001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => CLK_INTERNAL,
+  LATCH_INPUT_VALUE => NN_2,
+  CLOCK_ENABLE => NN_2,
+  INPUT_CLK => NN_2,
+  OUTPUT_CLK => NN_2,
+  OUTPUT_ENABLE => NN_1,
+  D_OUT_1 => NN_2,
+  D_OUT_0 => NN_2,
+  D_IN_1 => N_1,
+  D_IN_0 => N_2,
+  GLOBAL_BUFFER_OUTPUT => CLK_C_G);
+\COUNTER_RNO[12]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(12),
+  I1 => UN5_COUNTER_CRY_11,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_5);
+ENABLE_RNO: SB_LUT4 
+generic map(
+  LUT_INIT => X"F6FA"
+)
+port map (
+  I0 => ENABLE_C,
+  I1 => ENABLE_S_1,
+  I2 => RESET_C,
+  I3 => UN1_COUNTER_3_9,
+  O => ENABLE_1);
+\COUNTER_RNI9CJM[6]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0080"
+)
+port map (
+  I0 => COUNTER(6),
+  I1 => COUNTER(8),
+  I2 => COUNTER(9),
+  I3 => COUNTER(11),
+  O => UN1_COUNTER_3_8);
+\COUNTER_RNO[0]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"5555"
+)
+port map (
+  I0 => COUNTER(0),
+  I1 => NN_2,
+  I2 => NN_2,
+  I3 => NN_2,
+  O => COUNTER_I(0));
+\COUNTER_RNIFVVV[12]_Z69\: SB_LUT4 
+generic map(
+  LUT_INIT => X"1000"
+)
+port map (
+  I0 => COUNTER(4),
+  I1 => COUNTER(7),
+  I2 => COUNTER(10),
+  I3 => COUNTER(12),
+  O => COUNTER_RNIFVVV(12));
+\COUNTER_RNIB06D[1]_Z70\: SB_LUT4 
+generic map(
+  LUT_INIT => X"8000"
+)
+port map (
+  I0 => COUNTER(1),
+  I1 => COUNTER(2),
+  I2 => COUNTER(3),
+  I3 => COUNTER(5),
+  O => COUNTER_RNIB06D(1));
+\COUNTER_RNO[11]_Z71\: SB_LUT4 
+generic map(
+  LUT_INIT => X"9966"
+)
+port map (
+  I0 => NN_2,
+  I1 => COUNTER(11),
+  I2 => NN_2,
+  I3 => UN5_COUNTER_CRY_10,
+  O => COUNTER_RNO(11));
+\COUNTER_RNO[7]_Z72\: SB_LUT4 
+generic map(
+  LUT_INIT => X"9966"
+)
+port map (
+  I0 => NN_2,
+  I1 => COUNTER(7),
+  I2 => NN_2,
+  I3 => UN5_COUNTER_CRY_6,
+  O => COUNTER_RNO(7));
+\COUNTER_RNO[3]_Z73\: SB_LUT4 
+generic map(
+  LUT_INIT => X"9966"
+)
+port map (
+  I0 => NN_2,
+  I1 => COUNTER(3),
+  I2 => NN_2,
+  I3 => UN5_COUNTER_CRY_2,
+  O => COUNTER_RNO(3));
+\COUNTER_RNO[2]_Z74\: SB_LUT4 
+generic map(
+  LUT_INIT => X"9966"
+)
+port map (
+  I0 => NN_2,
+  I1 => COUNTER(2),
+  I2 => NN_2,
+  I3 => UN5_COUNTER_CRY_1,
+  O => COUNTER_RNO(2));
+\COUNTER_RNO[1]_Z75\: SB_LUT4 
+generic map(
+  LUT_INIT => X"C33C"
+)
+port map (
+  I0 => NN_2,
+  I1 => COUNTER(1),
+  I2 => NN_2,
+  I3 => COUNTER(0),
+  O => COUNTER_RNO(1));
+\COUNTER_RNO[4]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(4),
+  I1 => UN5_COUNTER_CRY_3,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC);
+\COUNTER_RNO[5]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(5),
+  I1 => UN5_COUNTER_CRY_4,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_0);
+\COUNTER_RNO[6]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(6),
+  I1 => UN5_COUNTER_CRY_5,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_1);
+\COUNTER_RNO[8]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(8),
+  I1 => UN5_COUNTER_CRY_7,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_2);
+\COUNTER_RNO[9]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(9),
+  I1 => UN5_COUNTER_CRY_8,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_3);
+\COUNTER_RNO[10]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"0666"
+)
+port map (
+  I0 => COUNTER(10),
+  I1 => UN5_COUNTER_CRY_9,
+  I2 => ENABLE_S_1,
+  I3 => UN1_COUNTER_3_9,
+  O => COUNTERC_4);
+\COUNTER_RNIJDFG[0]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"E4E4"
+)
+port map (
+  I0 => COUNTER(0),
+  I1 => NN_2,
+  I2 => COUNTER_RNIB06D(1),
+  I3 => NN_2,
+  O => UN1_COUNTER_3_9);
+\COUNTER_RNIOBJM1[6]\: SB_LUT4 
+generic map(
+  LUT_INIT => X"E4E4"
+)
+port map (
+  I0 => UN1_COUNTER_3_8,
+  I1 => NN_2,
+  I2 => COUNTER_RNIFVVV(12),
+  I3 => NN_2,
+  O => ENABLE_S_1);
+RESET_IBUF: SB_IO 
+generic map(
+  PIN_TYPE => "000001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => RESET_INTERNAL,
+  LATCH_INPUT_VALUE => NN_2,
+  CLOCK_ENABLE => NN_2,
+  INPUT_CLK => NN_2,
+  OUTPUT_CLK => NN_2,
+  OUTPUT_ENABLE => NN_1,
+  D_OUT_1 => NN_2,
+  D_OUT_0 => NN_2,
+  D_IN_1 => N_3,
+  D_IN_0 => RESET_C);
+ENABLE_OBUF: SB_IO 
+generic map(
+  PIN_TYPE => "011001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => ENABLE_3,
+  LATCH_INPUT_VALUE => NN_2,
+  CLOCK_ENABLE => NN_2,
+  INPUT_CLK => NN_2,
+  OUTPUT_CLK => NN_2,
+  OUTPUT_ENABLE => NN_1,
+  D_OUT_1 => NN_2,
+  D_OUT_0 => ENABLE_C,
+  D_IN_1 => N_4,
+  D_IN_0 => N_5);
+\COUNTER[3]_Z86\: SB_DFFSR port map (
+    Q => COUNTER(3),
+    D => COUNTER_RNO(3),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[2]_Z87\: SB_DFFSR port map (
+    Q => COUNTER(2),
+    D => COUNTER_RNO(2),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[1]_Z88\: SB_DFFSR port map (
+    Q => COUNTER(1),
+    D => COUNTER_RNO(1),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[0]_Z89\: SB_DFFSR port map (
+    Q => COUNTER(0),
+    D => COUNTER_I(0),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[12]_Z90\: SB_DFFSR port map (
+    Q => COUNTER(12),
+    D => COUNTERC_5,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[11]_Z91\: SB_DFFSR port map (
+    Q => COUNTER(11),
+    D => COUNTER_RNO(11),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[10]_Z92\: SB_DFFSR port map (
+    Q => COUNTER(10),
+    D => COUNTERC_4,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[9]_Z93\: SB_DFFSR port map (
+    Q => COUNTER(9),
+    D => COUNTERC_3,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[8]_Z94\: SB_DFFSR port map (
+    Q => COUNTER(8),
+    D => COUNTERC_2,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[7]_Z95\: SB_DFFSR port map (
+    Q => COUNTER(7),
+    D => COUNTER_RNO(7),
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[6]_Z96\: SB_DFFSR port map (
+    Q => COUNTER(6),
+    D => COUNTERC_1,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[5]_Z97\: SB_DFFSR port map (
+    Q => COUNTER(5),
+    D => COUNTERC_0,
+    C => CLK_C_G,
+    R => RESET_C);
+\COUNTER[4]_Z98\: SB_DFFSR port map (
+    Q => COUNTER(4),
+    D => COUNTERC,
+    C => CLK_C_G,
+    R => RESET_C);
+ENABLE_Z99: SB_DFF port map (
+    Q => ENABLE_C,
+    D => ENABLE_1,
+    C => CLK_C_G);
+UN5_COUNTER_CRY_1_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_1,
+    I0 => COUNTER(1),
+    I1 => NN_2,
+    CI => COUNTER(0));
+UN5_COUNTER_CRY_2_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_2,
+    I0 => COUNTER(2),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_1);
+UN5_COUNTER_CRY_3_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_3,
+    I0 => COUNTER(3),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_2);
+UN5_COUNTER_CRY_4_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_4,
+    I0 => COUNTER(4),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_3);
+UN5_COUNTER_CRY_5_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_5,
+    I0 => COUNTER(5),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_4);
+UN5_COUNTER_CRY_6_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_6,
+    I0 => COUNTER(6),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_5);
+UN5_COUNTER_CRY_7_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_7,
+    I0 => COUNTER(7),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_6);
+UN5_COUNTER_CRY_8_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_8,
+    I0 => COUNTER(8),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_7);
+UN5_COUNTER_CRY_9_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_9,
+    I0 => COUNTER(9),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_8);
+UN5_COUNTER_CRY_10_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_10,
+    I0 => COUNTER(10),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_9);
+UN5_COUNTER_CRY_11_C: SB_CARRY port map (
+    CO => UN5_COUNTER_CRY_11,
+    I0 => COUNTER(11),
+    I1 => NN_2,
+    CI => UN5_COUNTER_CRY_10);
+II_GND: GND port map (
+    Y => NN_2);
+II_VCC: VCC port map (
+    Y => NN_1);
+enable <= ENABLE_3;
+CLK_INTERNAL <= clk;
+RESET_INTERNAL <= reset;
+end beh;
+

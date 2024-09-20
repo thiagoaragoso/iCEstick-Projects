@@ -1,0 +1,171 @@
+//
+// Written by Synplify Pro 
+// Product Version "L-2016.09L+ice40"
+// Program "Synplify Pro", Mapper "maplat, Build 1612R"
+// Thu Sep 19 18:23:44 2024
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "\c:\hdl\icestick\icecube\synpbase\lib\generic\sb_ice40.v "
+// file 1 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\hypermods.v "
+// file 2 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\umr_capim.v "
+// file 3 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\scemi_objects.v "
+// file 4 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\scemi_pipes.svh "
+// file 5 "\c:\hdl\icestick\projects\blink_leds\blink_leds.v "
+// file 6 "\c:\hdl\icestick\icecube\synpbase\lib\nlconst.dat "
+
+`timescale 100 ps/100 ps
+module blink_leds (
+  reset,
+  enable,
+  leds
+)
+;
+input reset ;
+input enable ;
+output [3:0] leds ;
+wire reset ;
+wire enable ;
+wire [3:0] leds_c;
+wire GND ;
+wire VCC ;
+wire reset_c ;
+wire enable_c_g ;
+wire N_1 ;
+wire N_2 ;
+wire N_3 ;
+wire N_4 ;
+wire N_5 ;
+wire N_6 ;
+wire N_7 ;
+wire N_8 ;
+wire N_9 ;
+wire N_10 ;
+wire N_11 ;
+// @5:2
+  SB_GB_IO enable_ibuf_gb_io (
+	.PACKAGE_PIN(enable),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(GND),
+	.D_IN_1(N_1),
+	.D_IN_0(N_2),
+	.GLOBAL_BUFFER_OUTPUT(enable_c_g)
+);
+defparam enable_ibuf_gb_io.PIN_TYPE=6'b000001;
+defparam enable_ibuf_gb_io.NEG_TRIGGER=1'b0;
+// @5:1
+  SB_IO reset_ibuf (
+	.PACKAGE_PIN(reset),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(GND),
+	.D_IN_1(N_3),
+	.D_IN_0(reset_c)
+);
+defparam reset_ibuf.PIN_TYPE=6'b000001;
+defparam reset_ibuf.NEG_TRIGGER=1'b0;
+// @5:3
+  SB_IO \leds_obuf[0]  (
+	.PACKAGE_PIN(leds[0]),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(leds_c[0]),
+	.D_IN_1(N_4),
+	.D_IN_0(N_5)
+);
+defparam \leds_obuf[0] .PIN_TYPE=6'b011001;
+defparam \leds_obuf[0] .NEG_TRIGGER=1'b0;
+// @5:3
+  SB_IO \leds_obuf[1]  (
+	.PACKAGE_PIN(leds[1]),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(leds_c[1]),
+	.D_IN_1(N_6),
+	.D_IN_0(N_7)
+);
+defparam \leds_obuf[1] .PIN_TYPE=6'b011001;
+defparam \leds_obuf[1] .NEG_TRIGGER=1'b0;
+// @5:3
+  SB_IO \leds_obuf[2]  (
+	.PACKAGE_PIN(leds[2]),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(leds_c[2]),
+	.D_IN_1(N_8),
+	.D_IN_0(N_9)
+);
+defparam \leds_obuf[2] .PIN_TYPE=6'b011001;
+defparam \leds_obuf[2] .NEG_TRIGGER=1'b0;
+// @5:3
+  SB_IO \leds_obuf[3]  (
+	.PACKAGE_PIN(leds[3]),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(leds_c[3]),
+	.D_IN_1(N_10),
+	.D_IN_0(N_11)
+);
+defparam \leds_obuf[3] .PIN_TYPE=6'b011001;
+defparam \leds_obuf[3] .NEG_TRIGGER=1'b0;
+// @5:6
+  SB_DFFS \leds_Z[0]  (
+	.Q(leds_c[0]),
+	.D(leds_c[3]),
+	.C(enable_c_g),
+	.S(reset_c)
+);
+// @5:6
+  SB_DFFR \leds_Z[1]  (
+	.Q(leds_c[1]),
+	.D(leds_c[0]),
+	.C(enable_c_g),
+	.R(reset_c)
+);
+// @5:6
+  SB_DFFR \leds_Z[2]  (
+	.Q(leds_c[2]),
+	.D(leds_c[1]),
+	.C(enable_c_g),
+	.R(reset_c)
+);
+// @5:6
+  SB_DFFR \leds_Z[3]  (
+	.Q(leds_c[3]),
+	.D(leds_c[2]),
+	.C(enable_c_g),
+	.R(reset_c)
+);
+  GND GND_cZ (
+	.Y(GND)
+);
+  VCC VCC_cZ (
+	.Y(VCC)
+);
+endmodule /* blink_leds */
+

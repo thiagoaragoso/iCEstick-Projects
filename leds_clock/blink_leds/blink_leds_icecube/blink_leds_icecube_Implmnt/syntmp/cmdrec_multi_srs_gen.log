@@ -1,0 +1,7 @@
+C:\HDL\IceStick\IceCube\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_comp.srs  -osyn  C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_mult.srs  -log  C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synlog\blink_leds_icecube_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_comp.srs|io:i|time:1726788222|size:1285|exec:0
+file:C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_mult.srs|io:o|time:1726788223|size:1197|exec:0
+file:C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synlog\blink_leds_icecube_multi_srs_gen.srr|io:o|time:1726788223|size:831|exec:0
+file:C:\HDL\IceStick\IceCube\synpbase\bin\syn_nfilter.exe|io:i|time:1725993069|size:3128320|exec:1
+file:C:\HDL\IceStick\IceCube\synpbase\bin64\syn_nfilter.exe|io:i|time:1725993070|size:3947520|exec:1

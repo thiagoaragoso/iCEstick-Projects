@@ -1,0 +1,778 @@
+6:22:46 PM
+"C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\synpwrap\synpwrap.exe" -options "blink_leds_icecube_syn.prj" 
+starting Synplify_Prorunning Synplify_ProCopyright (C) 1992-2014 Lattice Semiconductor Corporation. All rights reserved.
+Information : Using arguments of synplify instead, will not check them here.
+Synplify_Pro succeed.
+Synthesis runtime 78076 seconds
+Current Implementation blink_leds_icecube_Implmnt its sbt path: C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt
+blink_leds_icecube_Implmnt: newer file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/blink_leds_icecube.edf detected. Need to run "Import P&R Input Files"
+"C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\synpwrap\synpwrap.exe" -prj "blink_leds_icecube_syn.prj" -log "blink_leds_icecube_Implmnt/blink_leds_icecube.srr"
+starting Synthesisrunning SynthesisCopyright (C) 1992-2014 Lattice Semiconductor Corporation. All rights reserved.
+
+==contents of blink_leds_icecube_Implmnt/blink_leds_icecube.srr
+#Build: Synplify Pro L-2016.09L+ice40, Build 077R, Dec  2 2016
+#install: C:\HDL\IceStick\IceCube\synpbase
+#OS: Windows 8 6.2
+#Hostname: THIAGO-ACER
+
+# Thu Sep 19 18:23:41 2024
+
+#Implementation: blink_leds_icecube_Implmnt
+
+Synopsys HDL Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+Synopsys Verilog Compiler, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+
+@I::"C:\HDL\IceStick\IceCube\synpbase\lib\generic\sb_ice40.v" (library work)
+@I::"C:\HDL\IceStick\IceCube\synpbase\lib\vlog\hypermods.v" (library __hyper__lib__)
+@I::"C:\HDL\IceStick\IceCube\synpbase\lib\vlog\umr_capim.v" (library snps_haps)
+@I::"C:\HDL\IceStick\IceCube\synpbase\lib\vlog\scemi_objects.v" (library snps_haps)
+@I::"C:\HDL\IceStick\IceCube\synpbase\lib\vlog\scemi_pipes.svh" (library snps_haps)
+@I::"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v" (library work)
+Verilog syntax check successful!
+
+Compiler output is up to date.  No re-compile necessary
+
+Selecting top level module blink_leds
+@N: CG364 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Synthesizing module blink_leds in library work.
+
+
+At c_ver Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 69MB peak: 71MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Sep 19 18:23:42 2024
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Sep 19 18:23:42 2024
+
+###########################################################]
+@END
+
+At c_hdl Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 3MB peak: 4MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Sep 19 18:23:42 2024
+
+###########################################################]
+Synopsys Netlist Linker, version comp2016q3p1, Build 141R, built Dec  5 2016
+@N|Running in 64-bit mode
+File C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_comp.srs changed - recompiling
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+@N: NF107 :"C:\HDL\IceStick\Projects\blink_leds\blink_leds.v":1:7:1:16|Selected library: work cell: blink_leds view verilog as top level
+
+At syn_nfilter Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 67MB peak: 68MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+
+Process completed successfully.
+# Thu Sep 19 18:23:43 2024
+
+###########################################################]
+Pre-mapping Report
+
+# Thu Sep 19 18:23:43 2024
+
+Synopsys Lattice Technology Pre-mapping, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 100MB)
+
+@A: MF827 |No constraint file specified.
+@L: C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube_scck.rpt 
+Printing clock  summary report in "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube_scck.rpt" file 
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 102MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 102MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 104MB)
+
+ICG Latch Removal Summary:
+Number of ICG latches removed:	0
+Number of ICG latches not removed:	0
+syn_allowed_resources : blockrams=16  set on top level netlist blink_leds
+
+Finished netlist restructuring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+
+Clock Summary
+*****************
+
+Start                 Requested      Requested     Clock        Clock                     Clock
+Clock                 Frequency      Period        Type         Group                     Load 
+-----------------------------------------------------------------------------------------------
+blink_leds|enable     1417.2 MHz     0.706         inferred     Autoconstr_clkgroup_0     4    
+===============================================================================================
+
+@W: MT529 :"c:\hdl\icestick\projects\blink_leds\blink_leds.v":6:0:6:5|Found inferred clock blink_leds|enable which controls 4 sequential elements including leds[3:0]. This clock has no specified timing constraint which may prevent conversion of gated or generated clocks and may adversely impact design performance. 
+
+Finished Pre Mapping Phase.
+@N: BN225 |Writing default property annotation file C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.sap.
+
+Starting constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+None
+None
+
+Finished constraint checker (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+Pre-mapping successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 47MB peak: 134MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu Sep 19 18:23:43 2024
+
+###########################################################]
+Map & Optimize Report
+
+# Thu Sep 19 18:23:43 2024
+
+Synopsys Lattice Technology Mapper, Version maplat, Build 1612R, Built Dec  5 2016 10:31:39
+Copyright (C) 1994-2016 Synopsys, Inc. All rights reserved. This Synopsys software and all associated documentation are proprietary to Synopsys, Inc. and may only be used pursuant to the terms and conditions of a written license agreement with Synopsys, Inc. All other use, reproduction, modification, or distribution of the Synopsys software or the associated documentation is strictly prohibited.
+Product Version L-2016.09L+ice40
+
+Mapper Startup Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 100MB peak: 100MB)
+
+@N: MF248 |Running in 64-bit mode.
+@N: MF666 |Clock conversion enabled. (Command "set_option -fix_gated_and_generated_clocks 1" in the project file.)
+
+Design Input Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+Mapper Initialization Complete (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 99MB peak: 101MB)
+
+
+Start loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 101MB)
+
+
+Finished loading timing files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 101MB peak: 103MB)
+
+
+
+Starting Optimization and Mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: MT206 |Auto Constrain mode is enabled
+
+Finished RTL optimizations (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Starting factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Finished factoring (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Finished gated-clock and generated-clock conversion (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Finished generic timing optimizations - Pass 1 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Starting Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Finished Early Timing Optimization (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Finished generic timing optimizations - Pass 2 (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+
+Finished preparing to map (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Finished technology mapping (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+
+
+@N: FX1016 :"c:\hdl\icestick\projects\blink_leds\blink_leds.v":2:31:2:36|SB_GB_IO inserted on the port enable.
+
+Finished technology timing optimizations and critical path resynthesis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Finished restoring hierarchy (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+
+@S |Clock Optimization Summary
+
+
+#### START OF CLOCK OPTIMIZATION REPORT #####[
+
+1 non-gated/non-generated clock tree(s) driving 4 clock pin(s) of sequential element(s)
+0 gated/generated clock tree(s) driving 0 clock pin(s) of sequential element(s)
+0 instances converted, 0 sequential instances remain driven by gated/generated clocks
+
+============================ Non-Gated/Non-Generated Clocks =============================
+Clock Tree ID     Driving Element       Drive Element Type     Fanout     Sample Instance
+-----------------------------------------------------------------------------------------
+@K:CKID0001       enable_ibuf_gb_io     SB_GB_IO               4          leds[0]        
+=========================================================================================
+
+
+##### END OF CLOCK OPTIMIZATION REPORT ######]
+
+
+Start Writing Netlists (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 107MB peak: 134MB)
+
+Writing Analyst data base C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_m.srm
+
+Finished Writing Netlist Databases (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 131MB peak: 134MB)
+
+Writing EDIF Netlist and constraint files
+@N: BW103 |The default time unit for the Synopsys Constraint File (SDC or FDC) is 1ns.
+@N: BW107 |Synopsys Constraint File capacitance units using default value of 1pF 
+@N: FX1056 |Writing EDF file: C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.edf
+L-2016.09L+ice40
+
+Finished Writing EDIF Netlist and constraint files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+Writing Verilog Simulation files
+
+Finished Writing Verilog Simulation files (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 132MB peak: 134MB)
+
+
+Start final timing analysis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 134MB)
+
+@W: MT420 |Found inferred clock blink_leds|enable with period 2.73ns. Please declare a user-defined clock on object "p:enable"
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Thu Sep 19 18:23:44 2024
+#
+
+
+Top view:               blink_leds
+Requested Frequency:    366.1 MHz
+Wire load mode:         top
+Paths requested:        5
+Constraint File(s):    
+@N: MT320 |This timing report is an estimate of place and route data. For final timing results, use the FPGA vendor place and route report.
+
+@N: MT322 |Clock constraints include only register-to-register paths associated with each individual clock.
+
+
+
+Performance Summary
+*******************
+
+
+Worst slack in design: -0.482
+
+                      Requested     Estimated     Requested     Estimated                Clock        Clock                
+Starting Clock        Frequency     Frequency     Period        Period        Slack      Type         Group                
+---------------------------------------------------------------------------------------------------------------------------
+blink_leds|enable     366.1 MHz     311.2 MHz     2.731         3.213         -0.482     inferred     Autoconstr_clkgroup_0
+===========================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-----------------------------------------------------------------------------------------------------------------------------
+Starting           Ending             |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-----------------------------------------------------------------------------------------------------------------------------
+blink_leds|enable  blink_leds|enable  |  2.731       -0.482  |  No paths    -      |  No paths    -      |  No paths    -    
+=============================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+No IO constraint found
+
+
+
+====================================
+Detailed Report for Clock: blink_leds|enable
+====================================
+
+
+
+Starting Points with Worst Slack
+********************************
+
+             Starting                                                Arrival           
+Instance     Reference             Type        Pin     Net           Time        Slack 
+             Clock                                                                     
+---------------------------------------------------------------------------------------
+leds[0]      blink_leds|enable     SB_DFFS     Q       leds_c[0]     0.540       -0.482
+leds[1]      blink_leds|enable     SB_DFFR     Q       leds_c[1]     0.540       -0.482
+leds[2]      blink_leds|enable     SB_DFFR     Q       leds_c[2]     0.540       -0.482
+leds[3]      blink_leds|enable     SB_DFFR     Q       leds_c[3]     0.540       -0.482
+=======================================================================================
+
+
+Ending Points with Worst Slack
+******************************
+
+             Starting                                                Required           
+Instance     Reference             Type        Pin     Net           Time         Slack 
+             Clock                                                                      
+----------------------------------------------------------------------------------------
+leds[0]      blink_leds|enable     SB_DFFS     D       leds_c[3]     2.626        -0.482
+leds[1]      blink_leds|enable     SB_DFFR     D       leds_c[0]     2.626        -0.482
+leds[2]      blink_leds|enable     SB_DFFR     D       leds_c[1]     2.626        -0.482
+leds[3]      blink_leds|enable     SB_DFFR     D       leds_c[2]     2.626        -0.482
+========================================================================================
+
+
+
+Worst Path Information
+***********************
+
+
+Path information for path number 1: 
+      Requested Period:                      2.731
+    - Setup time:                            0.105
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         2.626
+
+    - Propagation time:                      3.108
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.482
+
+    Number of logic level(s):                0
+    Starting point:                          leds[0] / Q
+    Ending point:                            leds[1] / D
+    The start point is clocked by            blink_leds|enable [rising] on pin C
+    The end   point is clocked by            blink_leds|enable [rising] on pin C
+
+Instance / Net                 Pin      Pin               Arrival     No. of    
+Name               Type        Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------
+leds[0]            SB_DFFS     Q        Out     0.540     0.540       -         
+leds_c[0]          Net         -        -       2.568     -           2         
+leds[1]            SB_DFFR     D        In      -         3.108       -         
+================================================================================
+Total path delay (propagation time + setup) of 3.213 is 0.645(20.1%) logic and 2.568(79.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 2: 
+      Requested Period:                      2.731
+    - Setup time:                            0.105
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         2.626
+
+    - Propagation time:                      3.108
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.482
+
+    Number of logic level(s):                0
+    Starting point:                          leds[1] / Q
+    Ending point:                            leds[2] / D
+    The start point is clocked by            blink_leds|enable [rising] on pin C
+    The end   point is clocked by            blink_leds|enable [rising] on pin C
+
+Instance / Net                 Pin      Pin               Arrival     No. of    
+Name               Type        Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------
+leds[1]            SB_DFFR     Q        Out     0.540     0.540       -         
+leds_c[1]          Net         -        -       2.568     -           2         
+leds[2]            SB_DFFR     D        In      -         3.108       -         
+================================================================================
+Total path delay (propagation time + setup) of 3.213 is 0.645(20.1%) logic and 2.568(79.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 3: 
+      Requested Period:                      2.731
+    - Setup time:                            0.105
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         2.626
+
+    - Propagation time:                      3.108
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.482
+
+    Number of logic level(s):                0
+    Starting point:                          leds[2] / Q
+    Ending point:                            leds[3] / D
+    The start point is clocked by            blink_leds|enable [rising] on pin C
+    The end   point is clocked by            blink_leds|enable [rising] on pin C
+
+Instance / Net                 Pin      Pin               Arrival     No. of    
+Name               Type        Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------
+leds[2]            SB_DFFR     Q        Out     0.540     0.540       -         
+leds_c[2]          Net         -        -       2.568     -           2         
+leds[3]            SB_DFFR     D        In      -         3.108       -         
+================================================================================
+Total path delay (propagation time + setup) of 3.213 is 0.645(20.1%) logic and 2.568(79.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+Path information for path number 4: 
+      Requested Period:                      2.731
+    - Setup time:                            0.105
+    + Clock delay at ending point:           0.000 (ideal)
+    = Required time:                         2.626
+
+    - Propagation time:                      3.108
+    - Clock delay at starting point:         0.000 (ideal)
+    = Slack (critical) :                     -0.482
+
+    Number of logic level(s):                0
+    Starting point:                          leds[3] / Q
+    Ending point:                            leds[0] / D
+    The start point is clocked by            blink_leds|enable [rising] on pin C
+    The end   point is clocked by            blink_leds|enable [rising] on pin C
+
+Instance / Net                 Pin      Pin               Arrival     No. of    
+Name               Type        Name     Dir     Delay     Time        Fan Out(s)
+--------------------------------------------------------------------------------
+leds[3]            SB_DFFR     Q        Out     0.540     0.540       -         
+leds_c[3]          Net         -        -       2.568     -           2         
+leds[0]            SB_DFFS     D        In      -         3.108       -         
+================================================================================
+Total path delay (propagation time + setup) of 3.213 is 0.645(20.1%) logic and 2.568(79.9%) route.
+Path delay compensated for clock skew. Clock skew is added to clock-to-out value, and is subtracted from setup time value
+
+
+
+##### END OF TIMING REPORT #####]
+
+Timing exceptions that could not be applied
+None
+
+Finished final timing analysis (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 134MB)
+
+
+Finished timing report (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 133MB peak: 134MB)
+
+---------------------------------------
+Resource Usage Report for blink_leds 
+
+Mapping to part: ice40hx1ktq144
+Cell usage:
+SB_DFFR         3 uses
+SB_DFFS         1 use
+SB_LUT4         0 uses
+
+I/O ports: 6
+I/O primitives: 6
+SB_GB_IO       1 use
+SB_IO          5 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   4 (0%)
+Total load per clock:
+   blink_leds|enable: 1
+
+@S |Mapping Summary:
+Total  LUTs: 0 (0%)
+
+Mapper successful!
+
+At Mapper Exit (Real Time elapsed 0h:00m:00s; CPU Time elapsed 0h:00m:00s; Memory used current: 27MB peak: 134MB)
+
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Thu Sep 19 18:23:44 2024
+
+###########################################################]
+
+
+Synthesis exit by 0.
+Current Implementation blink_leds_icecube_Implmnt its sbt path: C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt
+Synthesis succeed.
+Synthesis succeeded.
+Synthesis runtime 4 seconds
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\edifparser.exe" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/blink_leds_icecube.edf " "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist" "-pTQ144" -c --devicename iCE40HX1K
+starting edif parserrunning edif parserLattice Semiconductor Corporation  Edif Parser
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:30:22
+
+Parsing edif file: C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/blink_leds_icecube.edf...
+start to read sdc/scf file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/blink_leds_icecube.scf
+sdc_reader OK C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/blink_leds_icecube.scf
+Stored edif netlist at C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds...
+
+write Timing Constraint to C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt/Temp/sbt_temp.sdc
+
+EDIF Parser succeeded
+Top module is: blink_leds
+
+EDF Parser run-time: 0 (sec)
+edif parser succeed.
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\sbtplacer.exe" --des-lib "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --outdir "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer" --device-file "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" --package TQ144 --deviceMarketName iCE40HX1K --sdc-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\Temp/sbt_temp.sdc" --lib-file "C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib" --effort_level std --out-sdc-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer\blink_leds_pl.sdc"
+starting placerrunning placerExecuting : C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\sbtplacer.exe --des-lib C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds --outdir C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer --device-file C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev --package TQ144 --deviceMarketName iCE40HX1K --sdc-file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\Temp/sbt_temp.sdc --lib-file C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib --effort_level std --out-sdc-file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer\blink_leds_pl.sdc
+Lattice Semiconductor Corporation  Placer
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:55:52
+
+I2004: Option and Settings Summary
+=============================================================
+Device file          - C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev
+Package              - TQ144
+Design database      - C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds
+SDC file             - C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\Temp/sbt_temp.sdc
+Output directory     - C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer
+Timing library       - C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib
+Effort level         - std
+
+I2050: Starting reading inputs for placer
+=============================================================
+I2100: Reading design library: C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds/BFPGA_DESIGN_ep
+I2065: Reading device file : C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev
+I2051: Reading of inputs for placer completed successfully
+
+I2053: Starting placement of the design
+=============================================================
+
+Input Design Statistics
+    Number of LUTs      	:	0
+    Number of DFFs      	:	4
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	5
+    Number of GBIOs     	:	1
+    Number of GBs       	:	0
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+
+Phase 1
+I2077: Start design legalization
+
+Design Legalization Statistics
+    Number of feedthru LUTs inserted to legalize input of DFFs     	:	4
+    Number of feedthru LUTs inserted for LUTs driving multiple DFFs	:	0
+    Number of LUTs replicated for LUTs driving multiple DFFs       	:	0
+    Number of feedthru LUTs inserted to legalize output of CARRYs  	:	0
+    Number of feedthru LUTs inserted to legalize global signals    	:	0
+    Number of feedthru CARRYs inserted to legalize input of CARRYs 	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 01xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 10xxxx  	:	0
+    Number of inserted LUTs to Legalize IOs with PIN_TYPE= 11xxxx  	:	0
+    Total LUTs inserted                                            	:	4
+    Total CARRYs inserted                                          	:	0
+
+
+I2078: Design legalization is completed successfully
+I2088: Phase 1, elapsed time : 0.0 (sec)
+
+
+Phase 2
+I2088: Phase 2, elapsed time : 0.0 (sec)
+
+Phase 3
+
+Design Statistics after Packing
+    Number of LUTs      	:	4
+    Number of DFFs      	:	4
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+
+Device Utilization Summary after Packing
+    Sequential LogicCells
+        LUT and DFF      	:	4
+        LUT, DFF and CARRY	:	0
+    Combinational LogicCells
+        Only LUT         	:	0
+        CARRY Only       	:	0
+        LUT with CARRY   	:	0
+    LogicCells                  :	4/1280
+    PLBs                        :	1/160
+    BRAMs                       :	0/16
+    IOs and GBIOs               :	6/96
+    PLLs                        :	0/1
+
+
+I2088: Phase 3, elapsed time : 0.2 (sec)
+
+Phase 4
+I2088: Phase 4, elapsed time : 0.1 (sec)
+
+Phase 5
+I2088: Phase 5, elapsed time : 0.0 (sec)
+
+Phase 6
+I2088: Phase 6, elapsed time : 1.0 (sec)
+
+Final Design Statistics
+    Number of LUTs      	:	4
+    Number of DFFs      	:	4
+    Number of DFFs packed to IO	:	0
+    Number of Carrys    	:	0
+    Number of RAMs      	:	0
+    Number of ROMs      	:	0
+    Number of IOs       	:	5
+    Number of GBIOs     	:	1
+    Number of GBs       	:	0
+    Number of WarmBoot  	:	0
+    Number of PLLs      	:	0
+
+Device Utilization Summary
+    LogicCells                  :	4/1280
+    PLBs                        :	1/160
+    BRAMs                       :	0/16
+    IOs and GBIOs               :	6/96
+    PLLs                        :	0/1
+
+
+
+#####################################################################
+Placement Timing Summary
+
+The timing summary is based on estimated routing delays after
+placement. For final timing report, please carry out the timing
+analysis after routing.
+=====================================================================
+
+#####################################################################
+                     Clock Summary 
+=====================================================================
+Number of clocks: 1
+Clock: blink_leds|enable | Frequency: 606.96 MHz | Target: 366.30 MHz
+
+=====================================================================
+                     End of Clock Summary
+#####################################################################
+
+I2054: Placement of design completed successfully
+
+I2076: Placer run-time: 1.6 sec.
+
+placer succeed.
+starting IPExporterrunning IPExporterIPExporter succeed.
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\packer.exe" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --package TQ144 --outdir "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer" --DRC_only  --translator "C:\HDL\IceStick\IceCube\sbt_backend\bin\sdc_translator.tcl" --src_sdc_file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer\blink_leds_pl.sdc" --dst_sdc_file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc" --devicename iCE40HX1K
+starting packerrunning packerLattice Semiconductor Corporation  Packer
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:32:13
+
+Begin Packing...
+initializing finish
+Total HPWL cost is 8
+used logic cells: 4
+Design Rule Checking Succeeded
+
+DRC Checker run-time: 0 (sec)
+packer succeed.
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\packer.exe" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --package TQ144 --outdir "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer" --translator "C:\HDL\IceStick\IceCube\sbt_backend\bin\sdc_translator.tcl" --src_sdc_file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer\blink_leds_pl.sdc" --dst_sdc_file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc" --devicename iCE40HX1K
+starting packerrunning packerLattice Semiconductor Corporation  Packer
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:32:13
+
+Begin Packing...
+initializing finish
+Total HPWL cost is 8
+used logic cells: 4
+Translating sdc file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\placer\blink_leds_pl.sdc...
+Translated sdc file is C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc
+Packer succeeded
+
+Packer run-time: 0 (sec)
+packer succeed.
+
+
+"C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\sbrouter.exe" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib" "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc" --outdir "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\router" --sdf_file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.sdf" --pin_permutation
+starting routerrunning routerSJRouter....
+Executing : C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\sbrouter.exe C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc --outdir C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\router --sdf_file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.sdf --pin_permutation 
+Lattice Semiconductor Corporation  Router
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:44:15
+
+I1203: Reading Design blink_leds
+Read design time: 0
+I1202: Reading Architecture of device iCE40HX1K
+Read device time: 2
+I1209: Started routing
+I1223: Total Nets : 6 
+I1212: Iteration  1 :     0 unrouted : 0 seconds
+I1215: Routing is successful
+Routing time: 0
+I1206: Completed routing
+I1204: Writing Design blink_leds
+Lib Closed
+I1210: Writing routes
+I1218: Exiting the router
+I1224: Router run-time : 2 seconds
+router succeed.
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\netlister.exe" --verilog "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.v" --vhdl "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/sbt/outputs/simulation_netlist\blink_leds_sbt.vhd" --lib "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --view rt --device "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" --splitio  --in-sdc-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\packer\blink_leds_pk.sdc" --out-sdc-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\netlister\blink_leds_sbt.sdc"
+starting netlistrunning netlistLattice Semiconductor Corporation  Verilog & VHDL Netlister
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 18:18:39
+
+Generating Verilog & VHDL netlist files ...
+Writing C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.v
+Writing C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt/sbt/outputs/simulation_netlist\blink_leds_sbt.vhd
+Netlister succeeded.
+
+Netlister run-time: 0 (sec)
+netlist succeed.
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\sbtimer.exe" --des-lib "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --lib-file "C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib" --sdc-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\netlister\blink_leds_sbt.sdc" --sdf-file "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.sdf" --report-file "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\timer\blink_leds_timing.rpt" --device-file "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" --timing-summary
+starting timerrunning timerExecuting : C:\HDL\IceStick\IceCube\sbt_backend\bin\win32\opt\sbtimer.exe --des-lib C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds --lib-file C:\HDL\IceStick\IceCube\sbt_backend\devices\ice40HX1K.lib --sdc-file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\netlister\blink_leds_sbt.sdc --sdf-file C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\simulation_netlist\blink_leds_sbt.sdf --report-file C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\sbt\outputs\timer\blink_leds_timing.rpt --device-file C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev --timing-summary
+Lattice Semiconductor Corporation  Timer
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 17:41:47
+
+Timer run-time: 0 seconds
+timer succeed.
+timer succeeded.
+
+
+"C:/HDL/IceStick/IceCube/sbt_backend/bin/win32/opt\bitmap.exe" "C:\HDL\IceStick\IceCube\sbt_backend\devices\ICE40P01.dev" --design "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\netlist\oadb-blink_leds" --device_name iCE40HX1K --package TQ144 --outdir "C:/HDL/IceStick/Projects/blink_leds/blink_leds_icecube/blink_leds_icecube_Implmnt\sbt\outputs\bitmap" --low_power on --init_ram on --init_ram_bank 1111 --frequency low --warm_boot on
+starting bitmaprunning bitmapLattice Semiconductor Corporation  Bit Stream Generator
+Release:        2020.12.27943
+Build Date:     Dec  9 2020 18:17:40
+
+Bit Stream File Size: 257720 (251K 696 Bits)
+Bit Stream Generator succeeded
+
+Bitmap run-time: 0 (sec)
+bitmap succeed.
+6:49:08 PM

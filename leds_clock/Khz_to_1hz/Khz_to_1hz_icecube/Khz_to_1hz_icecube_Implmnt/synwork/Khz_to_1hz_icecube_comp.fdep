@@ -1,0 +1,15 @@
+#OPTIONS:"|-layerid|0|-orig_srs|C:\\HDL\\IceStick\\Projects\\Khz_to_1hz\\Khz_to_1hz_icecube\\Khz_to_1hz_icecube_Implmnt\\synwork\\Khz_to_1hz_icecube_comp.srs|-prodtype|synplify_pro|-primux|-fixsmult|-infer_seqShift|-ice|-sdff_counter|-nram|-divnmod|-nostructver|-I|C:\\HDL\\IceStick\\Projects\\Khz_to_1hz\\Khz_to_1hz_icecube\\|-I|C:\\HDL\\IceStick\\IceCube\\synpbase\\lib|-v2001|-devicelib|C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\generic\\sb_ice40.v|-encrypt|-pro|-ui|-fid2|-ram|-sharing|on|-ll|2000|-autosm|-lib|work"
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\bin64\\c_ver.exe":1725993069
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\generic\\sb_ice40.v":1725993071
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\hypermods.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\umr_capim.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\scemi_objects.v":1725993073
+#CUR:"C:\\HDL\\IceStick\\IceCube\\synpbase\\lib\\vlog\\scemi_pipes.svh":1725993073
+#CUR:"C:\\HDL\\IceStick\\Projects\\Khz_to_1hz\\Khz_to_1hz.v":1726709512
+0			"C:\HDL\IceStick\Projects\Khz_to_1hz\Khz_to_1hz.v" verilog
+#Dependency Lists(Uses List)
+0 -1
+#Dependency Lists(Users Of)
+0 -1
+#Design Unit to File Association
+module work Khz_to_1hz 0

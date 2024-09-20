@@ -1,0 +1,70 @@
+ble_pack foo.enable_LC_7_6_0 { foo.enable_RNO, foo.enable }
+clb_pack LT_7_6 { foo.enable_LC_7_6_0 }
+set_location LT_7_6 7 6
+ble_pack foo.counter_RNI08Q71_22_LC_8_5_0 { foo.counter_RNI08Q71[22] }
+ble_pack foo.counter_RNIALJ44_2_LC_8_5_1 { foo.counter_RNIALJ44[2] }
+ble_pack foo.counter_10_LC_8_5_2 { foo.counter_RNO[10], foo.counter[10] }
+ble_pack foo.counter_0_LC_8_5_3 { foo.counter_RNO[0], foo.counter[0] }
+ble_pack foo.counter_RNIV6AU_4_LC_8_5_4 { foo.counter_RNIV6AU[4] }
+ble_pack foo.counter_RNIOTN71_10_LC_8_5_5 { foo.counter_RNIOTN71[10] }
+ble_pack foo.counter_RNIJ8NM_2_LC_8_5_6 { foo.counter_RNIJ8NM[2] }
+clb_pack LT_8_5 { foo.counter_RNI08Q71_22_LC_8_5_0, foo.counter_RNIALJ44_2_LC_8_5_1, foo.counter_10_LC_8_5_2, foo.counter_0_LC_8_5_3, foo.counter_RNIV6AU_4_LC_8_5_4, foo.counter_RNIOTN71_10_LC_8_5_5, foo.counter_RNIJ8NM_2_LC_8_5_6 }
+set_location LT_8_5 8 5
+ble_pack foo.counter_7_LC_8_6_0 { foo.counter_RNO[7], foo.counter[7] }
+ble_pack foo.counter_RNIV5131_7_LC_8_6_1 { foo.counter_RNIV5131[7] }
+ble_pack foo.counter_1_LC_8_6_2 { foo.counter_RNO[1], foo.counter[1] }
+ble_pack foo.counter_RNIEHGH_1_LC_8_6_3 { foo.counter_RNIEHGH[1] }
+ble_pack foo.counter_RNI9NE82_14_LC_8_6_4 { foo.counter_RNI9NE82[14] }
+ble_pack foo.enable_RNIKS5P6_LC_8_6_5 { foo.enable_RNIKS5P6 }
+ble_pack foo.counter_11_LC_8_6_6 { foo.counter_RNO[11], foo.counter[11] }
+ble_pack foo.counter_15_LC_8_6_7 { foo.counter_RNO[15], foo.counter[15] }
+clb_pack LT_8_6 { foo.counter_7_LC_8_6_0, foo.counter_RNIV5131_7_LC_8_6_1, foo.counter_1_LC_8_6_2, foo.counter_RNIEHGH_1_LC_8_6_3, foo.counter_RNI9NE82_14_LC_8_6_4, foo.enable_RNIKS5P6_LC_8_6_5, foo.counter_11_LC_8_6_6, foo.counter_15_LC_8_6_7 }
+set_location LT_8_6 8 6
+ble_pack bar.leds_0_LC_8_7_0 { bar.leds_0_THRU_LUT4_0, bar.leds[0] }
+ble_pack bar.leds_1_LC_8_7_1 { bar.leds_1_THRU_LUT4_0, bar.leds[1] }
+ble_pack bar.leds_2_LC_8_7_2 { bar.leds_2_THRU_LUT4_0, bar.leds[2] }
+ble_pack bar.leds_3_LC_8_7_3 { bar.leds_3_THRU_LUT4_0, bar.leds[3] }
+clb_pack LT_8_7 { bar.leds_0_LC_8_7_0, bar.leds_1_LC_8_7_1, bar.leds_2_LC_8_7_2, bar.leds_3_LC_8_7_3 }
+set_location LT_8_7 8 7
+ble_pack foo.counter_16_LC_8_8_0 { foo.counter_RNO[16], foo.counter[16] }
+ble_pack foo.counter_17_LC_8_8_1 { foo.counter_RNO[17], foo.counter[17] }
+ble_pack foo.counter_19_LC_8_8_2 { foo.counter_RNO[19], foo.counter[19] }
+ble_pack foo.counter_20_LC_8_8_3 { foo.counter_RNO[20], foo.counter[20] }
+ble_pack foo.counter_8_LC_8_8_4 { foo.counter_RNO[8], foo.counter[8] }
+clb_pack LT_8_8 { foo.counter_16_LC_8_8_0, foo.counter_17_LC_8_8_1, foo.counter_19_LC_8_8_2, foo.counter_20_LC_8_8_3, foo.counter_8_LC_8_8_4 }
+set_location LT_8_8 8 8
+ble_pack foo.un5_counter_cry_1_c_LC_9_5_0 { foo.un5_counter_cry_1_c }
+ble_pack foo.counter_2_LC_9_5_1 { foo.counter_RNO[2], foo.counter[2], foo.un5_counter_cry_2_c }
+ble_pack foo.counter_3_LC_9_5_2 { foo.counter_RNO[3], foo.counter[3], foo.un5_counter_cry_3_c }
+ble_pack foo.counter_4_LC_9_5_3 { foo.counter_RNO[4], foo.counter[4], foo.un5_counter_cry_4_c }
+ble_pack foo.counter_5_LC_9_5_4 { foo.counter_RNO[5], foo.counter[5], foo.un5_counter_cry_5_c }
+ble_pack foo.counter_6_LC_9_5_5 { foo.counter_RNO[6], foo.counter[6], foo.un5_counter_cry_6_c }
+ble_pack foo.un5_counter_cry_6_THRU_LUT4_0_LC_9_5_6 { foo.un5_counter_cry_6_THRU_LUT4_0, foo.un5_counter_cry_7_c }
+ble_pack foo.un5_counter_cry_7_THRU_LUT4_0_LC_9_5_7 { foo.un5_counter_cry_7_THRU_LUT4_0, foo.un5_counter_cry_8_c }
+clb_pack LT_9_5 { foo.un5_counter_cry_1_c_LC_9_5_0, foo.counter_2_LC_9_5_1, foo.counter_3_LC_9_5_2, foo.counter_4_LC_9_5_3, foo.counter_5_LC_9_5_4, foo.counter_6_LC_9_5_5, foo.un5_counter_cry_6_THRU_LUT4_0_LC_9_5_6, foo.un5_counter_cry_7_THRU_LUT4_0_LC_9_5_7 }
+set_location LT_9_5 9 5
+ble_pack foo.counter_9_LC_9_6_0 { foo.counter_RNO[9], foo.counter[9], foo.un5_counter_cry_9_c }
+ble_pack foo.un5_counter_cry_9_THRU_LUT4_0_LC_9_6_1 { foo.un5_counter_cry_9_THRU_LUT4_0, foo.un5_counter_cry_10_c }
+ble_pack foo.un5_counter_cry_10_THRU_LUT4_0_LC_9_6_2 { foo.un5_counter_cry_10_THRU_LUT4_0, foo.un5_counter_cry_11_c }
+ble_pack foo.counter_12_LC_9_6_3 { foo.counter_RNO[12], foo.counter[12], foo.un5_counter_cry_12_c }
+ble_pack foo.counter_13_LC_9_6_4 { foo.counter_RNO[13], foo.counter[13], foo.un5_counter_cry_13_c }
+ble_pack foo.counter_14_LC_9_6_5 { foo.counter_RNO[14], foo.counter[14], foo.un5_counter_cry_14_c }
+ble_pack foo.un5_counter_cry_14_THRU_LUT4_0_LC_9_6_6 { foo.un5_counter_cry_14_THRU_LUT4_0, foo.un5_counter_cry_15_c }
+ble_pack foo.un5_counter_cry_15_THRU_LUT4_0_LC_9_6_7 { foo.un5_counter_cry_15_THRU_LUT4_0, foo.un5_counter_cry_16_c }
+clb_pack LT_9_6 { foo.counter_9_LC_9_6_0, foo.un5_counter_cry_9_THRU_LUT4_0_LC_9_6_1, foo.un5_counter_cry_10_THRU_LUT4_0_LC_9_6_2, foo.counter_12_LC_9_6_3, foo.counter_13_LC_9_6_4, foo.counter_14_LC_9_6_5, foo.un5_counter_cry_14_THRU_LUT4_0_LC_9_6_6, foo.un5_counter_cry_15_THRU_LUT4_0_LC_9_6_7 }
+set_location LT_9_6 9 6
+ble_pack foo.un5_counter_cry_16_THRU_LUT4_0_LC_9_7_0 { foo.un5_counter_cry_16_THRU_LUT4_0, foo.un5_counter_cry_17_c }
+ble_pack foo.counter_18_LC_9_7_1 { foo.counter_RNO[18], foo.counter[18], foo.un5_counter_cry_18_c }
+ble_pack foo.un5_counter_cry_18_THRU_LUT4_0_LC_9_7_2 { foo.un5_counter_cry_18_THRU_LUT4_0, foo.un5_counter_cry_19_c }
+ble_pack foo.un5_counter_cry_19_THRU_LUT4_0_LC_9_7_3 { foo.un5_counter_cry_19_THRU_LUT4_0, foo.un5_counter_cry_20_c }
+ble_pack foo.counter_21_LC_9_7_4 { foo.counter_RNO[21], foo.counter[21], foo.un5_counter_cry_21_c }
+ble_pack foo.counter_22_LC_9_7_5 { foo.counter_RNO[22], foo.counter[22] }
+clb_pack LT_9_7 { foo.un5_counter_cry_16_THRU_LUT4_0_LC_9_7_0, foo.counter_18_LC_9_7_1, foo.un5_counter_cry_18_THRU_LUT4_0_LC_9_7_2, foo.un5_counter_cry_19_THRU_LUT4_0_LC_9_7_3, foo.counter_21_LC_9_7_4, foo.counter_22_LC_9_7_5 }
+set_location LT_9_7 9 7
+set_location foo.N_28_g_gb 0 8
+set_io leds[2] 97
+set_io leds[0] 99
+set_io reset 44
+set_io leds[3] 96
+set_io leds[1] 98
+set_io clk 21

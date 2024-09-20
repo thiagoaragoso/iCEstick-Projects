@@ -1,0 +1,46 @@
+Running in Lattice mode
+
+
+Starting:    C:\HDL\IceStick\IceCube\synpbase\bin64\mbin\synbatch.exe
+Install:     C:\HDL\IceStick\IceCube\synpbase
+Hostname:    THIAGO-ACER
+Date:        Thu Sep 19 19:30:08 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch top_icecube_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+log file: "C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\top_icecube.srr"
+Running: top_icecube_Implmnt in foreground
+
+Running top_icecube_syn|top_icecube_Implmnt
+
+Running: compile (Compile) on top_icecube_syn|top_icecube_Implmnt
+# Thu Sep 19 19:30:08 2024
+
+Running: compile_flow (Compile Process) on top_icecube_syn|top_icecube_Implmnt
+# Thu Sep 19 19:30:08 2024
+
+Running: compiler (Compile Input) on top_icecube_syn|top_icecube_Implmnt
+# Thu Sep 19 19:30:08 2024
+compiler exited with errors
+Job failed on: top_icecube_syn|top_icecube_Implmnt
+
+Job: "compiler" terminated with error status: 2
+See log file: "C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synlog\top_icecube_compiler.srr"
+# Thu Sep 19 19:30:08 2024
+
+Return Code: 2
+Run Time:00h:00m:00s
+Complete: Compile Process on top_icecube_syn|top_icecube_Implmnt
+Complete: Compile on top_icecube_syn|top_icecube_Implmnt
+Complete: Logic Synthesis on top_icecube_syn|top_icecube_Implmnt
+
+exit status=2
+
+exit status=2
+

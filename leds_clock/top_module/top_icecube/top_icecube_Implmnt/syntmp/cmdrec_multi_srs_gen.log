@@ -1,0 +1,7 @@
+C:\HDL\IceStick\IceCube\synpbase\bin64\syn_nfilter.exe  -link  -multisrs  C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synwork\top_icecube_comp.srs  -osyn  C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synwork\top_icecube_mult.srs  -log  C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synlog\top_icecube_multi_srs_gen.srr 
+rc:0 success:1 runtime:0
+file:C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synwork\top_icecube_comp.srs|io:i|time:1726792262|size:3354|exec:0
+file:C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synwork\top_icecube_mult.srs|io:o|time:1726792263|size:1969|exec:0
+file:C:\HDL\IceStick\Projects\leds_clock\top_module\top_icecube\top_icecube_Implmnt\synlog\top_icecube_multi_srs_gen.srr|io:o|time:1726792263|size:707|exec:0
+file:C:\HDL\IceStick\IceCube\synpbase\bin\syn_nfilter.exe|io:i|time:1725993069|size:3128320|exec:1
+file:C:\HDL\IceStick\IceCube\synpbase\bin64\syn_nfilter.exe|io:i|time:1725993070|size:3947520|exec:1

@@ -1,0 +1,262 @@
+C:/HDL/IceStick/Projects/Khz_to_1hz/Khz_to_1hz_tb.v {1 {vlog -work work -stats=none C:/HDL/IceStick/Projects/Khz_to_1hz/Khz_to_1hz_tb.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2020.10 Oct 14 2020
+-- Compiling module Khz_to_1hz_tb
+
+Top level modules:
+	Khz_to_1hz_tb
+
+} {} {}} C:/HDL/IceStick/Projects/Khz_to_1hz/Khz_to_1hz_icecube/Khz_to_1hz_icecube_Implmnt/Khz_to_1hz_icecube.vm {1 {vlog -work work -stats=none C:/HDL/IceStick/Projects/Khz_to_1hz/Khz_to_1hz_icecube/Khz_to_1hz_icecube_Implmnt/Khz_to_1hz_icecube.vm
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2020.10 Oct 14 2020
+-- Compiling module Khz_to_1hz
+
+Top level modules:
+	Khz_to_1hz
+
+} {} {}} C:/HDL/IceStick/IceCube/verilog/sb_ice_syn.v {1 {vlog -work work -stats=none C:/HDL/IceStick/IceCube/verilog/sb_ice_syn.v
+Model Technology ModelSim - Lattice FPGA Edition vlog 2020.3 Compiler 2020.10 Oct 14 2020
+-- Compiling module SB_CARRY
+-- Compiling module SB_CARRY_IN_MUX
+-- Compiling module SB_LUT4
+-- Compiling module SB_DFF
+-- Compiling module SB_DFFSR
+-- Compiling module SB_DFFSS
+-- Compiling module SB_DFFR
+-- Compiling module SB_DFFS
+-- Compiling module SB_DFFE
+-- Compiling module SB_DFFESR
+-- Compiling module SB_DFFESS
+-- Compiling module SB_DFFER
+-- Compiling module SB_DFFES
+-- Compiling module SB_DFFN
+-- Compiling module SB_DFFNSR
+-- Compiling module SB_DFFNSS
+-- Compiling module SB_DFFNR
+-- Compiling module SB_DFFNS
+-- Compiling module SB_DFFNE
+-- Compiling module SB_DFFNESR
+-- Compiling module SB_DFFNESS
+-- Compiling module SB_DFFNER
+-- Compiling module SB_DFFNES
+-- Compiling module SB_RAM4KNR
+-- Compiling module SB_RAM4KNW
+-- Compiling module SB_RAM4KNRNW
+-- Compiling module SB_RAM4K
+-- Compiling module SB_RAM40_4KNR
+-- Compiling module SB_RAM40_4KNW
+-- Compiling module SB_RAM40_4KNRNW
+-- Compiling module SB_RAM40_4K
+-- Compiling module read_data_decoder
+-- Compiling module write_data_decoder
+-- Compiling module mask_decoder
+-- Compiling module SB_RAM256x16
+-- Compiling module SB_RAM256x16NR
+-- Compiling module SB_RAM256x16NW
+-- Compiling module SB_RAM256x16NRNW
+-- Compiling module SB_RAM512x8
+-- Compiling module SB_RAM512x8NR
+-- Compiling module SB_RAM512x8NW
+-- Compiling module SB_RAM512x8NRNW
+-- Compiling module SB_RAM1024x4
+-- Compiling module SB_RAM1024x4NR
+-- Compiling module SB_RAM1024x4NW
+-- Compiling module SB_RAM1024x4NRNW
+-- Compiling module SB_RAM2048x2
+-- Compiling module SB_RAM2048x2NR
+-- Compiling module SB_RAM2048x2NW
+-- Compiling module SB_RAM2048x2NRNW
+-- Compiling module SB_IO
+-- Compiling module SB_GB_IO
+-- Compiling module SB_GB
+-- Compiling module preio_physical
+-- Compiling module SB_WARMBOOT
+-- Compiling module SB_IO_DS
+-- Compiling module GND
+-- Compiling module VCC
+-- Compiling module ShiftReg
+-- Compiling module SbtSPLL
+-- Compiling module SB_PLL_CORE
+-- Compiling module SB_PLL_PAD
+-- Compiling module SB_PLL_2_PAD
+-- Compiling module SB_PLL40_CORE
+-- Compiling module SB_PLL40_PAD
+-- Compiling module SB_PLL40_2_PAD
+-- Compiling module SB_PLL40_2F_CORE
+-- Compiling module SB_PLL40_2F_PAD
+-- Compiling module SB_MIPI_RX_2LANE
+-- Compiling module SB_TMDS_deserializer
+-- Compiling module clkdelay16
+-- Compiling module dvi_deserializer
+-- Compiling module mem4x10
+-- Compiling module SB_PLL40_2F_PAD_DS
+-- Compiling module SB_PLL40_PAD_DS
+-- Compiling module SB_MAC16
+-- Compiling module mac16_physical
+-- Compiling module booth_encoder
+-- Compiling module booth_selector
+-- Compiling module MPY8x8
+-- Compiling module MPY16X16
+-- Compiling module MULT_ACCUM
+-- Compiling module OUT_MUX_4
+-- Compiling module ACCUM_REG
+-- Compiling module LOAD_ADD_MUX
+-- Compiling module ADDER_A_IN_MUX
+-- Compiling module ADDER_B_IN_MUX
+-- Compiling module CARRY_IN_MUX
+-- Compiling module ACCUM_ADDER
+-- Compiling module ha
+-- Compiling module fa
+-- Compiling module mpfa
+-- Compiling module mclg4
+-- Compiling module mclg16
+-- Compiling module fcla16
+-- Compiling module fcla8
+-- Compiling module REG_BYPASS_MUX
+-- Compiling module SB_IO_DLY
+-- Compiling module inoutdly64
+-- Compiling module SB_MIPI_TX_4LANE
+-- Compiling module SB_RAM1024x16
+-- Compiling module SB_RAM1024x16NR
+-- Compiling module SB_RAM1024x16NW
+-- Compiling module SB_RAM1024x16NRNW
+-- Compiling module SB_RAM2048x8
+-- Compiling module SB_RAM2048x8NR
+-- Compiling module SB_RAM2048x8NW
+-- Compiling module SB_RAM2048x8NRNW
+-- Compiling module SB_RAM4096x4
+-- Compiling module SB_RAM4096x4NR
+-- Compiling module SB_RAM4096x4NW
+-- Compiling module SB_RAM4096x4NRNW
+-- Compiling module SB_RAM8192x2
+-- Compiling module SB_RAM8192x2NR
+-- Compiling module SB_RAM8192x2NW
+-- Compiling module SB_RAM8192x2NRNW
+-- Compiling module SB_RAM16K
+-- Compiling module SB_RAM40_16K
+-- Compiling module SB_RAM40_16KNR
+-- Compiling module SB_RAM40_16KNW
+-- Compiling module SB_RAM40_16KNRNW
+-- Compiling module SB_I2C
+-- Compiling module SB_SPI
+-- Compiling module SB_HSOSC
+-- Compiling module SB_LSOSC
+-- Compiling module SB_LFOSC
+-- Compiling module SB_HFOSC
+-- Compiling module SB_IR_DRV
+-- Compiling module SB_RGB_DRV
+-- Compiling module SB_LED_DRV_CUR
+-- Compiling module SB_LEDD_IP
+-- Compiling module SB_IO_OD
+-- Compiling module SB_RGBA_DRV
+-- Compiling module SB_BARCODE_DRV
+-- Compiling module SB_IR400_DRV
+-- Compiling module SB_IR500_DRV
+-- Compiling module SB_IR_IP
+-- Compiling module SB_I2C_FIFO
+-- Compiling module SB_LEDDA_IP
+-- Compiling module SB_RGB_IP
+-- Compiling module SB_SPRAM256KA
+-- Compiling module SB_IO_I3C
+-- Compiling module SB_FILTER_50NS
+
+Top level modules:
+	SB_CARRY
+	SB_CARRY_IN_MUX
+	SB_LUT4
+	SB_DFF
+	SB_DFFSR
+	SB_DFFSS
+	SB_DFFR
+	SB_DFFS
+	SB_DFFE
+	SB_DFFESR
+	SB_DFFESS
+	SB_DFFER
+	SB_DFFES
+	SB_DFFN
+	SB_DFFNSR
+	SB_DFFNSS
+	SB_DFFNR
+	SB_DFFNS
+	SB_DFFNE
+	SB_DFFNESR
+	SB_DFFNESS
+	SB_DFFNER
+	SB_DFFNES
+	SB_RAM4KNR
+	SB_RAM4KNW
+	SB_RAM4KNRNW
+	SB_RAM40_4KNR
+	SB_RAM40_4KNW
+	SB_RAM40_4KNRNW
+	SB_RAM256x16NR
+	SB_RAM256x16NW
+	SB_RAM256x16NRNW
+	SB_RAM512x8NR
+	SB_RAM512x8NW
+	SB_RAM512x8NRNW
+	SB_RAM1024x4NR
+	SB_RAM1024x4NW
+	SB_RAM1024x4NRNW
+	SB_RAM2048x2NR
+	SB_RAM2048x2NW
+	SB_RAM2048x2NRNW
+	SB_IO
+	SB_GB_IO
+	SB_GB
+	SB_WARMBOOT
+	SB_IO_DS
+	GND
+	VCC
+	SB_PLL_CORE
+	SB_PLL_PAD
+	SB_PLL_2_PAD
+	SB_PLL40_CORE
+	SB_PLL40_PAD
+	SB_PLL40_2_PAD
+	SB_PLL40_2F_CORE
+	SB_PLL40_2F_PAD
+	SB_MIPI_RX_2LANE
+	SB_TMDS_deserializer
+	SB_PLL40_PAD_DS
+	SB_MAC16
+	SB_IO_DLY
+	SB_MIPI_TX_4LANE
+	SB_RAM1024x16NR
+	SB_RAM1024x16NW
+	SB_RAM1024x16NRNW
+	SB_RAM2048x8NR
+	SB_RAM2048x8NW
+	SB_RAM2048x8NRNW
+	SB_RAM4096x4NR
+	SB_RAM4096x4NW
+	SB_RAM4096x4NRNW
+	SB_RAM8192x2NR
+	SB_RAM8192x2NW
+	SB_RAM8192x2NRNW
+	SB_RAM40_16KNR
+	SB_RAM40_16KNW
+	SB_RAM40_16KNRNW
+	SB_I2C
+	SB_SPI
+	SB_HSOSC
+	SB_LSOSC
+	SB_LFOSC
+	SB_HFOSC
+	SB_IR_DRV
+	SB_RGB_DRV
+	SB_LED_DRV_CUR
+	SB_LEDD_IP
+	SB_IO_OD
+	SB_RGBA_DRV
+	SB_BARCODE_DRV
+	SB_IR400_DRV
+	SB_IR500_DRV
+	SB_IR_IP
+	SB_I2C_FIFO
+	SB_LEDDA_IP
+	SB_RGB_IP
+	SB_SPRAM256KA
+	SB_IO_I3C
+	SB_FILTER_50NS
+
+} {} {}}

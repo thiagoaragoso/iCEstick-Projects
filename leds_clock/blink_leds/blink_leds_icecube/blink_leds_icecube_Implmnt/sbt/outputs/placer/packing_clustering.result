@@ -1,0 +1,5 @@
+ble_pack leds[0]_LC_0 {leds[0], ledsZ0Z_0_THRU_LUT4_0}
+ble_pack leds[1]_LC_1 {leds[1], ledsZ0Z_1_THRU_LUT4_0}
+ble_pack leds[2]_LC_2 {leds[2], ledsZ0Z_2_THRU_LUT4_0}
+ble_pack leds[3]_LC_3 {leds[3], ledsZ0Z_3_THRU_LUT4_0}
+clb_pack PLB_0 {leds[0]_LC_0, leds[1]_LC_1, leds[2]_LC_2, leds[3]_LC_3}

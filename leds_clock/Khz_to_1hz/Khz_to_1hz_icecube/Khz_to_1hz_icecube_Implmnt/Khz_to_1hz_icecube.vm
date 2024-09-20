@@ -1,0 +1,446 @@
+//
+// Written by Synplify Pro 
+// Product Version "L-2016.09L+ice40"
+// Program "Synplify Pro", Mapper "maplat, Build 1612R"
+// Thu Sep 19 18:07:05 2024
+//
+// Source file index table:
+// Object locations will have the form <file>:<line>
+// file 0 "\c:\hdl\icestick\icecube\synpbase\lib\generic\sb_ice40.v "
+// file 1 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\hypermods.v "
+// file 2 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\umr_capim.v "
+// file 3 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\scemi_objects.v "
+// file 4 "\c:\hdl\icestick\icecube\synpbase\lib\vlog\scemi_pipes.svh "
+// file 5 "\c:\hdl\icestick\projects\khz_to_1hz\khz_to_1hz.v "
+// file 6 "\c:\hdl\icestick\icecube\synpbase\lib\nlconst.dat "
+
+`timescale 100 ps/100 ps
+(* divisor=5999 *)module Khz_to_1hz (
+  clk,
+  reset,
+  enable
+)
+;
+input clk ;
+input reset ;
+output enable ;
+wire clk ;
+wire reset ;
+wire enable ;
+wire [12:0] counter;
+wire [11:1] counter_RNO;
+wire [0:0] counter_i;
+wire [12:12] counter_RNIFVVV;
+wire [1:1] counter_RNIB06D;
+wire VCC ;
+wire GND ;
+wire reset_c ;
+wire enable_c ;
+wire un5_counter_cry_1 ;
+wire un5_counter_cry_2 ;
+wire un5_counter_cry_3 ;
+wire un5_counter_cry_4 ;
+wire un5_counter_cry_5 ;
+wire un5_counter_cry_6 ;
+wire un5_counter_cry_7 ;
+wire un5_counter_cry_8 ;
+wire un5_counter_cry_9 ;
+wire un5_counter_cry_10 ;
+wire un5_counter_cry_11 ;
+wire counterc ;
+wire counterc_0 ;
+wire counterc_1 ;
+wire counterc_2 ;
+wire counterc_3 ;
+wire counterc_4 ;
+wire counterc_5 ;
+wire un1_counter_3_8 ;
+wire un1_counter_3_9 ;
+wire enable_s_1 ;
+wire enable_1 ;
+wire clk_c_g ;
+wire N_1 ;
+wire N_2 ;
+wire N_3 ;
+wire N_4 ;
+wire N_5 ;
+// @5:1
+  SB_GB_IO clk_ibuf_gb_io (
+	.PACKAGE_PIN(clk),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(GND),
+	.D_IN_1(N_1),
+	.D_IN_0(N_2),
+	.GLOBAL_BUFFER_OUTPUT(clk_c_g)
+);
+defparam clk_ibuf_gb_io.PIN_TYPE=6'b000001;
+defparam clk_ibuf_gb_io.NEG_TRIGGER=1'b0;
+  SB_LUT4 \counter_RNO[12]  (
+	.I0(counter[12]),
+	.I1(un5_counter_cry_11),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_5)
+);
+defparam \counter_RNO[12] .LUT_INIT=16'h0666;
+  SB_LUT4 enable_RNO (
+	.I0(enable_c),
+	.I1(enable_s_1),
+	.I2(reset_c),
+	.I3(un1_counter_3_9),
+	.O(enable_1)
+);
+defparam enable_RNO.LUT_INIT=16'hF6FA;
+  SB_LUT4 \counter_RNI9CJM[6]  (
+	.I0(counter[6]),
+	.I1(counter[8]),
+	.I2(counter[9]),
+	.I3(counter[11]),
+	.O(un1_counter_3_8)
+);
+defparam \counter_RNI9CJM[6] .LUT_INIT=16'h0080;
+  SB_LUT4 \counter_RNO[0]  (
+	.I0(counter[0]),
+	.I1(GND),
+	.I2(GND),
+	.I3(GND),
+	.O(counter_i[0])
+);
+defparam \counter_RNO[0] .LUT_INIT=16'h5555;
+  SB_LUT4 \counter_RNIFVVV_cZ[12]  (
+	.I0(counter[4]),
+	.I1(counter[7]),
+	.I2(counter[10]),
+	.I3(counter[12]),
+	.O(counter_RNIFVVV[12])
+);
+defparam \counter_RNIFVVV_cZ[12] .LUT_INIT=16'h1000;
+  SB_LUT4 \counter_RNIB06D_cZ[1]  (
+	.I0(counter[1]),
+	.I1(counter[2]),
+	.I2(counter[3]),
+	.I3(counter[5]),
+	.O(counter_RNIB06D[1])
+);
+defparam \counter_RNIB06D_cZ[1] .LUT_INIT=16'h8000;
+  SB_LUT4 \counter_RNO_cZ[11]  (
+	.I0(GND),
+	.I1(counter[11]),
+	.I2(GND),
+	.I3(un5_counter_cry_10),
+	.O(counter_RNO[11])
+);
+defparam \counter_RNO_cZ[11] .LUT_INIT=16'h9966;
+  SB_LUT4 \counter_RNO_cZ[7]  (
+	.I0(GND),
+	.I1(counter[7]),
+	.I2(GND),
+	.I3(un5_counter_cry_6),
+	.O(counter_RNO[7])
+);
+defparam \counter_RNO_cZ[7] .LUT_INIT=16'h9966;
+  SB_LUT4 \counter_RNO_cZ[3]  (
+	.I0(GND),
+	.I1(counter[3]),
+	.I2(GND),
+	.I3(un5_counter_cry_2),
+	.O(counter_RNO[3])
+);
+defparam \counter_RNO_cZ[3] .LUT_INIT=16'h9966;
+  SB_LUT4 \counter_RNO_cZ[2]  (
+	.I0(GND),
+	.I1(counter[2]),
+	.I2(GND),
+	.I3(un5_counter_cry_1),
+	.O(counter_RNO[2])
+);
+defparam \counter_RNO_cZ[2] .LUT_INIT=16'h9966;
+  SB_LUT4 \counter_RNO_cZ[1]  (
+	.I0(GND),
+	.I1(counter[1]),
+	.I2(GND),
+	.I3(counter[0]),
+	.O(counter_RNO[1])
+);
+defparam \counter_RNO_cZ[1] .LUT_INIT=16'hC33C;
+  SB_LUT4 \counter_RNO[4]  (
+	.I0(counter[4]),
+	.I1(un5_counter_cry_3),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc)
+);
+defparam \counter_RNO[4] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNO[5]  (
+	.I0(counter[5]),
+	.I1(un5_counter_cry_4),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_0)
+);
+defparam \counter_RNO[5] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNO[6]  (
+	.I0(counter[6]),
+	.I1(un5_counter_cry_5),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_1)
+);
+defparam \counter_RNO[6] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNO[8]  (
+	.I0(counter[8]),
+	.I1(un5_counter_cry_7),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_2)
+);
+defparam \counter_RNO[8] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNO[9]  (
+	.I0(counter[9]),
+	.I1(un5_counter_cry_8),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_3)
+);
+defparam \counter_RNO[9] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNO[10]  (
+	.I0(counter[10]),
+	.I1(un5_counter_cry_9),
+	.I2(enable_s_1),
+	.I3(un1_counter_3_9),
+	.O(counterc_4)
+);
+defparam \counter_RNO[10] .LUT_INIT=16'h0666;
+  SB_LUT4 \counter_RNIJDFG[0]  (
+	.I0(counter[0]),
+	.I1(GND),
+	.I2(counter_RNIB06D[1]),
+	.I3(GND),
+	.O(un1_counter_3_9)
+);
+defparam \counter_RNIJDFG[0] .LUT_INIT=16'hE4E4;
+  SB_LUT4 \counter_RNIOBJM1[6]  (
+	.I0(un1_counter_3_8),
+	.I1(GND),
+	.I2(counter_RNIFVVV[12]),
+	.I3(GND),
+	.O(enable_s_1)
+);
+defparam \counter_RNIOBJM1[6] .LUT_INIT=16'hE4E4;
+// @5:2
+  SB_IO reset_ibuf (
+	.PACKAGE_PIN(reset),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(GND),
+	.D_IN_1(N_3),
+	.D_IN_0(reset_c)
+);
+defparam reset_ibuf.PIN_TYPE=6'b000001;
+defparam reset_ibuf.NEG_TRIGGER=1'b0;
+// @5:3
+  SB_IO enable_obuf (
+	.PACKAGE_PIN(enable),
+	.LATCH_INPUT_VALUE(GND),
+	.CLOCK_ENABLE(GND),
+	.INPUT_CLK(GND),
+	.OUTPUT_CLK(GND),
+	.OUTPUT_ENABLE(VCC),
+	.D_OUT_1(GND),
+	.D_OUT_0(enable_c),
+	.D_IN_1(N_4),
+	.D_IN_0(N_5)
+);
+defparam enable_obuf.PIN_TYPE=6'b011001;
+defparam enable_obuf.NEG_TRIGGER=1'b0;
+// @5:9
+  SB_DFFSR \counter_Z[3]  (
+	.Q(counter[3]),
+	.D(counter_RNO[3]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[2]  (
+	.Q(counter[2]),
+	.D(counter_RNO[2]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[1]  (
+	.Q(counter[1]),
+	.D(counter_RNO[1]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[0]  (
+	.Q(counter[0]),
+	.D(counter_i[0]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[12]  (
+	.Q(counter[12]),
+	.D(counterc_5),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[11]  (
+	.Q(counter[11]),
+	.D(counter_RNO[11]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[10]  (
+	.Q(counter[10]),
+	.D(counterc_4),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[9]  (
+	.Q(counter[9]),
+	.D(counterc_3),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[8]  (
+	.Q(counter[8]),
+	.D(counterc_2),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[7]  (
+	.Q(counter[7]),
+	.D(counter_RNO[7]),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[6]  (
+	.Q(counter[6]),
+	.D(counterc_1),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[5]  (
+	.Q(counter[5]),
+	.D(counterc_0),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFFSR \counter_Z[4]  (
+	.Q(counter[4]),
+	.D(counterc),
+	.C(clk_c_g),
+	.R(reset_c)
+);
+// @5:9
+  SB_DFF enable_Z (
+	.Q(enable_c),
+	.D(enable_1),
+	.C(clk_c_g)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_1_c (
+	.CO(un5_counter_cry_1),
+	.I0(counter[1]),
+	.I1(GND),
+	.CI(counter[0])
+);
+// @5:19
+  SB_CARRY un5_counter_cry_2_c (
+	.CO(un5_counter_cry_2),
+	.I0(counter[2]),
+	.I1(GND),
+	.CI(un5_counter_cry_1)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_3_c (
+	.CO(un5_counter_cry_3),
+	.I0(counter[3]),
+	.I1(GND),
+	.CI(un5_counter_cry_2)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_4_c (
+	.CO(un5_counter_cry_4),
+	.I0(counter[4]),
+	.I1(GND),
+	.CI(un5_counter_cry_3)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_5_c (
+	.CO(un5_counter_cry_5),
+	.I0(counter[5]),
+	.I1(GND),
+	.CI(un5_counter_cry_4)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_6_c (
+	.CO(un5_counter_cry_6),
+	.I0(counter[6]),
+	.I1(GND),
+	.CI(un5_counter_cry_5)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_7_c (
+	.CO(un5_counter_cry_7),
+	.I0(counter[7]),
+	.I1(GND),
+	.CI(un5_counter_cry_6)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_8_c (
+	.CO(un5_counter_cry_8),
+	.I0(counter[8]),
+	.I1(GND),
+	.CI(un5_counter_cry_7)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_9_c (
+	.CO(un5_counter_cry_9),
+	.I0(counter[9]),
+	.I1(GND),
+	.CI(un5_counter_cry_8)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_10_c (
+	.CO(un5_counter_cry_10),
+	.I0(counter[10]),
+	.I1(GND),
+	.CI(un5_counter_cry_9)
+);
+// @5:19
+  SB_CARRY un5_counter_cry_11_c (
+	.CO(un5_counter_cry_11),
+	.I0(counter[11]),
+	.I1(GND),
+	.CI(un5_counter_cry_10)
+);
+  GND GND_cZ (
+	.Y(GND)
+);
+  VCC VCC_cZ (
+	.Y(VCC)
+);
+endmodule /* Khz_to_1hz */
+

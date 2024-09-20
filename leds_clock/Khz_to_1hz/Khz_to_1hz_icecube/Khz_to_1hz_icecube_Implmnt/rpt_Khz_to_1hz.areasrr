@@ -1,0 +1,35 @@
+#### START OF AREA REPORT #####[
+
+Part:			ICE40HX1KTQ144 (Lattice)
+
+--------------------------------------------------------------------------
+########   Utilization report for  Top level view:   Khz_to_1hz   ########
+==========================================================================
+
+SEQUENTIAL ELEMENTS
+Name      Total elements     Utilization     Notes
+--------------------------------------------------
+FLOPS     14                 100 %                
+==================================================
+Total SEQUENTIAL ELEMENTS in the block Khz_to_1hz:	14 (28.57 % Utilization)
+
+
+COMBINATIONAL LOGIC
+Name       Total elements     Utilization     Notes
+---------------------------------------------------
+LUTS       19                 100 %                
+CARRYS     11                 100 %                
+===================================================
+Total COMBINATIONAL LOGIC in the block Khz_to_1hz:	30 (61.22 % Utilization)
+
+
+IO PADS
+Name     Total elements     Utilization     Notes
+-------------------------------------------------
+PADS     3                  100 %                
+=================================================
+Total IO PADS in the block Khz_to_1hz:	3 (6.12 % Utilization)
+
+
+##### END OF AREA REPORT #####]
+

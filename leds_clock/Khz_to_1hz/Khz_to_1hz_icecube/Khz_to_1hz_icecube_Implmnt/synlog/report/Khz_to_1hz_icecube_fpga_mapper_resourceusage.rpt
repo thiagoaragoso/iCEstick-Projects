@@ -1,0 +1,24 @@
+---------------------------------------
+Resource Usage Report for Khz_to_1hz 
+
+Mapping to part: ice40hx1ktq144
+Cell usage:
+SB_CARRY        11 uses
+SB_DFF          1 use
+SB_DFFSR        13 uses
+SB_LUT4         19 uses
+
+I/O ports: 3
+I/O primitives: 3
+SB_GB_IO       1 use
+SB_IO          2 uses
+
+I/O Register bits:                  0
+Register bits not including I/Os:   14 (1%)
+
+@S |Mapping Summary:
+Total  LUTs: 19 (1%)
+
+Distribution of All Consumed LUTs = LUT4 
+Distribution of All Consumed Luts 19 = 19 
+

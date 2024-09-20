@@ -1,0 +1,2208 @@
+# ******************************************************************************
+
+# iCEcube Static Timer
+
+# Version:            2020.12.27943
+
+# Build Date:         Dec  9 2020 17:33:20
+
+# File Generated:     Sep 19 2024 18:23:59
+
+# Purpose:            Timing Report with critical paths info
+
+# Copyright (C) 2006-2010 by Lattice Semiconductor Corp. All rights reserved.
+
+# ******************************************************************************
+
+Device: iCE40HX1K
+Derating factors (Best:Typical:Worst) :-  ( 0.563724 : 0.623363 : 0.701346 )
+Derating factor used to generate this timing report:  Worst
+Based on the following operating conditions 
+Junction Temperature(degree Celsius): 85
+Core Voltage(V): 1.14
+Process Corner:  Worst
+NOTE:
+Please check both worst-case and best-case scenarios for "Setup Times" 
+and "Hold Times" checks
+ #####################################################################
+                    Table of Contents
+ =====================================================================
+	1::Clock Frequency Summary
+	2::Clock Relationship Summary
+	3::Datasheet Report
+		3.1::Setup Times
+		3.2::Clock to Out
+		3.3::Pad to Pad
+		3.4::Hold Times
+		3.5::Minimum Clock to Out
+		3.6::Minimum Pad To Pad
+	4::Path Details for Clock Frequency Summary
+		4.1::Critical Path Report for blink_leds|enable
+	5::Path Details for Clock Relationship Summary
+		5.1::Critical Path Report for (blink_leds|enable:R vs. blink_leds|enable:R)
+	6::Path Details for DataSheet
+		6.1::Setup Times Path Details
+			6.1.1::Path details for port: reset
+		6.2::Clock to Out Path Details
+			6.2.1::Path details for port: leds[0]
+			6.2.2::Path details for port: leds[1]
+			6.2.3::Path details for port: leds[2]
+			6.2.4::Path details for port: leds[3]
+		6.3::PI to PO Path Details
+		6.4::Hold Times Path Details
+			6.4.1::Path details for port: reset
+		6.5::Minimum Clock to Out Path Details
+			6.5.1::Path details for port: leds[0]
+			6.5.2::Path details for port: leds[1]
+			6.5.3::Path details for port: leds[2]
+			6.5.4::Path details for port: leds[3]
+		6.6::Minimum Pad To Pad Path Details
+ =====================================================================
+                    End of Table of Contents
+ #####################################################################
+
+ #####################################################################
+                    1::Clock Frequency Summary
+ =====================================================================
+Number of clocks: 1
+Clock: blink_leds|enable  | Frequency: 712.92 MHz  | Target: 366.30 MHz  | 
+
+ =====================================================================
+                    End of Clock Frequency Summary
+ #####################################################################
+
+
+ #####################################################################
+                    2::Clock Relationship Summary
+ =====================================================================
+
+Launch Clock       Capture Clock      Constraint(R-R)  Slack(R-R)  Constraint(R-F)  Slack(R-F)  Constraint(F-F)  Slack(F-F)  Constraint(F-R)  Slack(F-R)  
+-----------------  -----------------  ---------------  ----------  ---------------  ----------  ---------------  ----------  ---------------  ----------  
+blink_leds|enable  blink_leds|enable  2730             1327        N/A              N/A         N/A              N/A         N/A              N/A         
+
+ =====================================================================
+                    End of Clock Relationship Summary
+ #####################################################################
+
+
+ #####################################################################
+                    3::Datasheet Report
+
+All values are in Picoseconds
+ =====================================================================
+
+                        3.1::Setup Times
+                        ----------------
+
+Data Port  Clock Port  Setup Times  Clock Reference:Phase  
+---------  ----------  -----------  ---------------------  
+reset      enable      205          blink_leds|enable:R    
+
+
+                       3.2::Clock to Out
+                       -----------------
+
+Data Port  Clock Port  Clock to Out  Clock Reference:Phase  
+---------  ----------  ------------  ---------------------  
+leds[0]    enable      7836          blink_leds|enable:R    
+leds[1]    enable      7836          blink_leds|enable:R    
+leds[2]    enable      7836          blink_leds|enable:R    
+leds[3]    enable      7836          blink_leds|enable:R    
+
+
+                         3.3::Pad to Pad
+                         ---------------
+
+Port Name (Input)  Port Name (Output)  Pad to Pad  
+-----------------  ------------------  ----------  
+
+
+                         3.4::Hold Times
+                         ---------------
+
+Data Port  Clock Port  Hold Times  Clock Reference:Phase  
+---------  ----------  ----------  ---------------------  
+reset      enable      83          blink_leds|enable:R    
+
+
+               3.5::Minimum Clock to Out
+               -------------------------
+
+Data Port  Clock Port  Minimum Clock to Out  Clock Reference:Phase  
+---------  ----------  --------------------  ---------------------  
+leds[0]    enable      7367                  blink_leds|enable:R    
+leds[1]    enable      7367                  blink_leds|enable:R    
+leds[2]    enable      7367                  blink_leds|enable:R    
+leds[3]    enable      7367                  blink_leds|enable:R    
+
+
+                 3.6::Minimum Pad To Pad
+                 -----------------------
+
+Port Name (Input)  Port Name (Output)  Minimum Pad To Pad  
+-----------------  ------------------  ------------------  
+
+===================================================================== 
+                    End of Datasheet Report
+##################################################################### 
+##################################################################### 
+                    4::Path Details for Clock Frequency Summary
+===================================================================== 
+4.1::Critical Path Report for blink_leds|enable
+***********************************************
+Clock: blink_leds|enable
+Frequency: 712.92 MHz | Target: 366.30 MHz
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : ledsZ0Z_2_LC_1_3_2/in3
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1327  RISE       2
+I__20/I                   LocalMux                       0              2921   1327  RISE       1
+I__20/O                   LocalMux                     330              3251   1327  RISE       1
+I__22/I                   InMux                          0              3251   1327  RISE       1
+I__22/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_2_LC_1_3_2/in3    LogicCell40_SEQ_MODE_1010      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Frequency Summary
+##################################################################### 
+
+
+##################################################################### 
+                    5::Path Details for Clock Relationship Summary
+===================================================================== 
+
+5.1::Critical Path Report for (blink_leds|enable:R vs. blink_leds|enable:R)
+***************************************************************************
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : ledsZ0Z_2_LC_1_3_2/in3
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1327  RISE       2
+I__20/I                   LocalMux                       0              2921   1327  RISE       1
+I__20/O                   LocalMux                     330              3251   1327  RISE       1
+I__22/I                   InMux                          0              3251   1327  RISE       1
+I__22/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_2_LC_1_3_2/in3    LogicCell40_SEQ_MODE_1010      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+===================================================================== 
+                    End of Path Details for Clock Relationship Summary
+##################################################################### 
+
+
+##################################################################### 
+                    6::Path Details for DataSheet
+===================================================================== 
+
+
+6.1::Setup Times Path Details           
+--------------------------------------------------
+
+6.1.1::Path details for port: reset     
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port         : reset
+Clock Port        : enable
+Clock Reference   : blink_leds|enable:R
+Setup Time        : 205
+
+
+Data Path Delay                2586
++ Setup Time                      0
+- Capture Clock Path Delay    -2381
+---------------------------- ------
+Setup to Clock                  205
+
+Data Path
+pin name                        model name                 delay  cummulative delay  edge  Fanout  
+------------------------------  -------------------------  -----  -----------------  ----  ------  
+reset                           blink_leds                 0      0                  RISE  1       
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                     0      0                  RISE  1       
+reset_ibuf_iopad/DOUT           IO_PAD                     510    510                RISE  1       
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001     0      510                RISE  1       
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001     617    1127               RISE  1       
+I__13/I                         Odrv4                      0      1127               RISE  1       
+I__13/O                         Odrv4                      351    1478               RISE  1       
+I__14/I                         Span4Mux_s3_v              0      1478               RISE  1       
+I__14/O                         Span4Mux_s3_v              316    1793               RISE  1       
+I__15/I                         LocalMux                   0      1793               RISE  1       
+I__15/O                         LocalMux                   330    2123               RISE  1       
+I__16/I                         SRMux                      0      2123               RISE  1       
+I__16/O                         SRMux                      463    2586               RISE  1       
+ledsZ0Z_1_LC_1_3_6/sr           LogicCell40_SEQ_MODE_1010  0      2586               RISE  1       
+
+Capture Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+6.2::Clock to Out Path Details          
+--------------------------------------------------
+
+6.2.1::Path details for port: leds[0]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[0]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7836
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4915
+---------------------------- ------
+Clock To Out Delay             7836
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_0_LC_1_3_0/lcout          LogicCell40_SEQ_MODE_1011  540    2921               RISE  2       
+I__25/I                           LocalMux                   0      2921               RISE  1       
+I__25/O                           LocalMux                   330    3251               RISE  1       
+I__27/I                           IoInMux                    0      3251               RISE  1       
+I__27/O                           IoInMux                    259    3510               RISE  1       
+leds_obuf_0_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3510               RISE  1       
+leds_obuf_0_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5748               FALL  1       
+leds_obuf_0_iopad/DIN             IO_PAD                     0      5748               FALL  1       
+leds_obuf_0_iopad/PACKAGEPIN:out  IO_PAD                     2088   7836               FALL  1       
+leds[0]                           blink_leds                 0      7836               FALL  1       
+
+6.2.2::Path details for port: leds[1]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[1]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7836
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4915
+---------------------------- ------
+Clock To Out Delay             7836
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_1_LC_1_3_6/lcout          LogicCell40_SEQ_MODE_1010  540    2921               RISE  2       
+I__21/I                           LocalMux                   0      2921               RISE  1       
+I__21/O                           LocalMux                   330    3251               RISE  1       
+I__23/I                           IoInMux                    0      3251               RISE  1       
+I__23/O                           IoInMux                    259    3510               RISE  1       
+leds_obuf_1_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3510               RISE  1       
+leds_obuf_1_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5748               FALL  1       
+leds_obuf_1_iopad/DIN             IO_PAD                     0      5748               FALL  1       
+leds_obuf_1_iopad/PACKAGEPIN:out  IO_PAD                     2088   7836               FALL  1       
+leds[1]                           blink_leds                 0      7836               FALL  1       
+
+6.2.3::Path details for port: leds[2]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[2]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7836
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4915
+---------------------------- ------
+Clock To Out Delay             7836
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_2_LC_1_3_2/lcout          LogicCell40_SEQ_MODE_1010  540    2921               RISE  2       
+I__33/I                           LocalMux                   0      2921               RISE  1       
+I__33/O                           LocalMux                   330    3251               RISE  1       
+I__35/I                           IoInMux                    0      3251               RISE  1       
+I__35/O                           IoInMux                    259    3510               RISE  1       
+leds_obuf_2_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3510               RISE  1       
+leds_obuf_2_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5748               FALL  1       
+leds_obuf_2_iopad/DIN             IO_PAD                     0      5748               FALL  1       
+leds_obuf_2_iopad/PACKAGEPIN:out  IO_PAD                     2088   7836               FALL  1       
+leds[2]                           blink_leds                 0      7836               FALL  1       
+
+6.2.4::Path details for port: leds[3]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[3]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7836
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4915
+---------------------------- ------
+Clock To Out Delay             7836
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_3_LC_1_3_3/lcout          LogicCell40_SEQ_MODE_1010  540    2921               RISE  2       
+I__29/I                           LocalMux                   0      2921               RISE  1       
+I__29/O                           LocalMux                   330    3251               RISE  1       
+I__31/I                           IoInMux                    0      3251               RISE  1       
+I__31/O                           IoInMux                    259    3510               RISE  1       
+leds_obuf_3_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3510               RISE  1       
+leds_obuf_3_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2237   5748               FALL  1       
+leds_obuf_3_iopad/DIN             IO_PAD                     0      5748               FALL  1       
+leds_obuf_3_iopad/PACKAGEPIN:out  IO_PAD                     2088   7836               FALL  1       
+leds[3]                           blink_leds                 0      7836               FALL  1       
+
+6.4::Hold Times Path Details            
+--------------------------------------------------
+
+6.4.1::Path details for port: reset     
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port         : reset
+Clock Port        : enable
+Clock Reference   : blink_leds|enable:R
+Hold Time         : 83
+
+
+Capture Clock Path Delay       2381
++ Hold  Time                      0
+- Data Path Delay             -2298
+---------------------------- ------
+Hold Time                        83
+
+Data Path
+pin name                        model name                 delay  cummulative delay  edge  Fanout  
+------------------------------  -------------------------  -----  -----------------  ----  ------  
+reset                           blink_leds                 0      0                  FALL  1       
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                     0      0                  FALL  1       
+reset_ibuf_iopad/DOUT           IO_PAD                     460    460                FALL  1       
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001     0      460                FALL  1       
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001     463    923                FALL  1       
+I__13/I                         Odrv4                      0      923                FALL  1       
+I__13/O                         Odrv4                      372    1295               FALL  1       
+I__14/I                         Span4Mux_s3_v              0      1295               FALL  1       
+I__14/O                         Span4Mux_s3_v              337    1631               FALL  1       
+I__15/I                         LocalMux                   0      1631               FALL  1       
+I__15/O                         LocalMux                   309    1940               FALL  1       
+I__16/I                         SRMux                      0      1940               FALL  1       
+I__16/O                         SRMux                      358    2298               FALL  1       
+ledsZ0Z_1_LC_1_3_6/sr           LogicCell40_SEQ_MODE_1010  0      2298               FALL  1       
+
+Capture Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+6.5::Min Clock to Out Path Details      
+--------------------------------------------------
+
+6.5.1::Path details for port: leds[0]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[0]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7367
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4446
+---------------------------- ------
+Clock To Out Delay             7367
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_0_LC_1_3_0/lcout          LogicCell40_SEQ_MODE_1011  540    2921               FALL  2       
+I__25/I                           LocalMux                   0      2921               FALL  1       
+I__25/O                           LocalMux                   309    3230               FALL  1       
+I__27/I                           IoInMux                    0      3230               FALL  1       
+I__27/O                           IoInMux                    217    3447               FALL  1       
+leds_obuf_0_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3447               FALL  1       
+leds_obuf_0_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   5453               RISE  1       
+leds_obuf_0_iopad/DIN             IO_PAD                     0      5453               RISE  1       
+leds_obuf_0_iopad/PACKAGEPIN:out  IO_PAD                     1914   7367               RISE  1       
+leds[0]                           blink_leds                 0      7367               RISE  1       
+
+6.5.2::Path details for port: leds[1]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[1]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7367
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4446
+---------------------------- ------
+Clock To Out Delay             7367
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_1_LC_1_3_6/lcout          LogicCell40_SEQ_MODE_1010  540    2921               FALL  2       
+I__21/I                           LocalMux                   0      2921               FALL  1       
+I__21/O                           LocalMux                   309    3230               FALL  1       
+I__23/I                           IoInMux                    0      3230               FALL  1       
+I__23/O                           IoInMux                    217    3447               FALL  1       
+leds_obuf_1_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3447               FALL  1       
+leds_obuf_1_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   5453               RISE  1       
+leds_obuf_1_iopad/DIN             IO_PAD                     0      5453               RISE  1       
+leds_obuf_1_iopad/PACKAGEPIN:out  IO_PAD                     1914   7367               RISE  1       
+leds[1]                           blink_leds                 0      7367               RISE  1       
+
+6.5.3::Path details for port: leds[2]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[2]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7367
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4446
+---------------------------- ------
+Clock To Out Delay             7367
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_2_LC_1_3_2/lcout          LogicCell40_SEQ_MODE_1010  540    2921               FALL  2       
+I__33/I                           LocalMux                   0      2921               FALL  1       
+I__33/O                           LocalMux                   309    3230               FALL  1       
+I__35/I                           IoInMux                    0      3230               FALL  1       
+I__35/O                           IoInMux                    217    3447               FALL  1       
+leds_obuf_2_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3447               FALL  1       
+leds_obuf_2_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   5453               RISE  1       
+leds_obuf_2_iopad/DIN             IO_PAD                     0      5453               RISE  1       
+leds_obuf_2_iopad/PACKAGEPIN:out  IO_PAD                     1914   7367               RISE  1       
+leds[2]                           blink_leds                 0      7367               RISE  1       
+
+6.5.4::Path details for port: leds[3]   
+--------------------------------------------------
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+Data Port          : leds[3]
+Clock Port         : enable
+Clock Reference    : blink_leds|enable:R
+Clock to Out Delay : 7367
+
+
+Launch Clock Path Delay        2381
++ Clock To Q Delay              540
++ Data Path Delay              4446
+---------------------------- ------
+Clock To Out Delay             7367
+
+Launch Clock Path
+pin name                                             model name                 delay  cummulative delay  edge  Fanout  
+---------------------------------------------------  -------------------------  -----  -----------------  ----  ------  
+enable                                               blink_leds                 0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                     0      0                  RISE  1       
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                     510    510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                0      510                RISE  1       
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                1408   1918               RISE  1       
+I__17/I                                              gio2CtrlBuf                0      1918               RISE  1       
+I__17/O                                              gio2CtrlBuf                0      1918               RISE  1       
+I__18/I                                              GlobalMux                  0      1918               RISE  1       
+I__18/O                                              GlobalMux                  154    2073               RISE  1       
+I__19/I                                              ClkMux                     0      2073               RISE  1       
+I__19/O                                              ClkMux                     309    2381               RISE  1       
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010  0      2381               RISE  1       
+
+Data Path
+pin name                          model name                 delay  cummulative delay  edge  Fanout  
+--------------------------------  -------------------------  -----  -----------------  ----  ------  
+ledsZ0Z_3_LC_1_3_3/lcout          LogicCell40_SEQ_MODE_1010  540    2921               FALL  2       
+I__29/I                           LocalMux                   0      2921               FALL  1       
+I__29/O                           LocalMux                   309    3230               FALL  1       
+I__31/I                           IoInMux                    0      3230               FALL  1       
+I__31/O                           IoInMux                    217    3447               FALL  1       
+leds_obuf_3_preio/DOUT0           PRE_IO_PIN_TYPE_011001     0      3447               FALL  1       
+leds_obuf_3_preio/PADOUT          PRE_IO_PIN_TYPE_011001     2006   5453               RISE  1       
+leds_obuf_3_iopad/DIN             IO_PAD                     0      5453               RISE  1       
+leds_obuf_3_iopad/PACKAGEPIN:out  IO_PAD                     1914   7367               RISE  1       
+leds[3]                           blink_leds                 0      7367               RISE  1       
+
+
+ =====================================================================
+                    End of Path Details for Datasheet
+ #####################################################################
+
+##################################################################### 
+                    Detailed Setup Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : ledsZ0Z_2_LC_1_3_2/in3
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1327  RISE       2
+I__20/I                   LocalMux                       0              2921   1327  RISE       1
+I__20/O                   LocalMux                     330              3251   1327  RISE       1
+I__22/I                   InMux                          0              3251   1327  RISE       1
+I__22/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_2_LC_1_3_2/in3    LogicCell40_SEQ_MODE_1010      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_3_LC_1_3_3/lcout
+Path End         : ledsZ0Z_0_LC_1_3_0/in3
+Capture Clock    : ledsZ0Z_0_LC_1_3_0/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_3_LC_1_3_3/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1327  RISE       2
+I__28/I                   LocalMux                       0              2921   1327  RISE       1
+I__28/O                   LocalMux                     330              3251   1327  RISE       1
+I__30/I                   InMux                          0              3251   1327  RISE       1
+I__30/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_0_LC_1_3_0/in3    LogicCell40_SEQ_MODE_1011      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_2_LC_1_3_2/lcout
+Path End         : ledsZ0Z_3_LC_1_3_3/in3
+Capture Clock    : ledsZ0Z_3_LC_1_3_3/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_2_LC_1_3_2/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1327  RISE       2
+I__32/I                   LocalMux                       0              2921   1327  RISE       1
+I__32/O                   LocalMux                     330              3251   1327  RISE       1
+I__34/I                   InMux                          0              3251   1327  RISE       1
+I__34/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_3_LC_1_3_3/in3    LogicCell40_SEQ_MODE_1010      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_0_LC_1_3_0/lcout
+Path End         : ledsZ0Z_1_LC_1_3_6/in3
+Capture Clock    : ledsZ0Z_1_LC_1_3_6/clk
+Setup Constraint : 2730p
+Path slack       : 1328p
+
+Capture Clock Arrival Time (blink_leds|enable:R#2)   2730
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                         -274
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       4838
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    589
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3510
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_0_LC_1_3_0/lcout  LogicCell40_SEQ_MODE_1011    540              2921   1327  RISE       2
+I__24/I                   LocalMux                       0              2921   1327  RISE       1
+I__24/O                   LocalMux                     330              3251   1327  RISE       1
+I__26/I                   InMux                          0              3251   1327  RISE       1
+I__26/O                   InMux                        259              3510   1327  RISE       1
+ledsZ0Z_1_LC_1_3_6/in3    LogicCell40_SEQ_MODE_1010      0              3510   1327  RISE       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_1_LC_1_3_6/sr
+Capture Clock    : ledsZ0Z_1_LC_1_3_6/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    +INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                          -160
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_1_LC_1_3_6/sr           LogicCell40_SEQ_MODE_1010      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_3_LC_1_3_3/sr
+Capture Clock    : ledsZ0Z_3_LC_1_3_3/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    +INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                          -160
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2298
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2298
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  FALL       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  FALL       1
+reset_ibuf_iopad/DOUT           IO_PAD                       460               460   +INF  FALL       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               460   +INF  FALL       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               923   +INF  FALL       1
+I__13/I                         Odrv4                          0               923   +INF  FALL       1
+I__13/O                         Odrv4                        372              1295   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1295   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1631   +INF  FALL       1
+I__15/I                         LocalMux                       0              1631   +INF  FALL       1
+I__15/O                         LocalMux                     309              1940   +INF  FALL       1
+I__16/I                         SRMux                          0              1940   +INF  FALL       1
+I__16/O                         SRMux                        358              2298   +INF  FALL       1
+ledsZ0Z_3_LC_1_3_3/sr           LogicCell40_SEQ_MODE_1010      0              2298   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : leds[1]
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__21/I                           LocalMux                       0              2921   +INF  RISE       1
+I__21/O                           LocalMux                     330              3251   +INF  RISE       1
+I__23/I                           IoInMux                        0              3251   +INF  RISE       1
+I__23/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_1_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_1_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_1_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_1_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[1]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_3_LC_1_3_3/lcout
+Path End         : leds[3]
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_3_LC_1_3_3/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__29/I                           LocalMux                       0              2921   +INF  RISE       1
+I__29/O                           LocalMux                     330              3251   +INF  RISE       1
+I__31/I                           IoInMux                        0              3251   +INF  RISE       1
+I__31/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_3_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_3_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_3_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_3_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[3]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_2_LC_1_3_2/sr
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    +INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                          -160
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_2_LC_1_3_2/sr           LogicCell40_SEQ_MODE_1010      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_2_LC_1_3_2/lcout
+Path End         : leds[2]
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_2_LC_1_3_2/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__33/I                           LocalMux                       0              2921   +INF  RISE       1
+I__33/O                           LocalMux                     330              3251   +INF  RISE       1
+I__35/I                           IoInMux                        0              3251   +INF  RISE       1
+I__35/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_2_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_2_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_2_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_2_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[2]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_0_LC_1_3_0/sr
+Capture Clock    : ledsZ0Z_0_LC_1_3_0/clk
+Setup Constraint : +INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    +INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                          -160
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        +INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_0_LC_1_3_0/sr           LogicCell40_SEQ_MODE_1011      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+
+
+++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_0_LC_1_3_0/lcout
+Path End         : leds[0]
+Setup Constraint : +INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_0_LC_1_3_0/lcout          LogicCell40_SEQ_MODE_1011    540              2921   +INF  RISE       2
+I__25/I                           LocalMux                       0              2921   +INF  RISE       1
+I__25/O                           LocalMux                     330              3251   +INF  RISE       1
+I__27/I                           IoInMux                        0              3251   +INF  RISE       1
+I__27/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_0_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_0_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_0_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_0_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[0]                           blink_leds                     0              7836   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Setup Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    Detailed Hold Report for all timing paths 
+===================================================================== 
+
+++++ Path 1 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : ledsZ0Z_2_LC_1_3_2/in3
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)      0
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                            0
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       2381
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    526
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3447
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1066  FALL       2
+I__20/I                   LocalMux                       0              2921   1066  FALL       1
+I__20/O                   LocalMux                     309              3230   1066  FALL       1
+I__22/I                   InMux                          0              3230   1066  FALL       1
+I__22/O                   InMux                        217              3447   1066  FALL       1
+ledsZ0Z_2_LC_1_3_2/in3    LogicCell40_SEQ_MODE_1010      0              3447   1066  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 2 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_3_LC_1_3_3/lcout
+Path End         : ledsZ0Z_0_LC_1_3_0/in3
+Capture Clock    : ledsZ0Z_0_LC_1_3_0/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)      0
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                            0
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       2381
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    526
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3447
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_3_LC_1_3_3/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1066  FALL       2
+I__28/I                   LocalMux                       0              2921   1066  FALL       1
+I__28/O                   LocalMux                     309              3230   1066  FALL       1
+I__30/I                   InMux                          0              3230   1066  FALL       1
+I__30/O                   InMux                        217              3447   1066  FALL       1
+ledsZ0Z_0_LC_1_3_0/in3    LogicCell40_SEQ_MODE_1011      0              3447   1066  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+
+
+++++ Path 3 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_2_LC_1_3_2/lcout
+Path End         : ledsZ0Z_3_LC_1_3_3/in3
+Capture Clock    : ledsZ0Z_3_LC_1_3_3/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)      0
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                            0
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       2381
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    526
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3447
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_2_LC_1_3_2/lcout  LogicCell40_SEQ_MODE_1010    540              2921   1066  FALL       2
+I__32/I                   LocalMux                       0              2921   1066  FALL       1
+I__32/O                   LocalMux                     309              3230   1066  FALL       1
+I__34/I                   InMux                          0              3230   1066  FALL       1
+I__34/O                   InMux                        217              3447   1066  FALL       1
+ledsZ0Z_3_LC_1_3_3/in3    LogicCell40_SEQ_MODE_1010      0              3447   1066  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 4 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_0_LC_1_3_0/lcout
+Path End         : ledsZ0Z_1_LC_1_3_6/in3
+Capture Clock    : ledsZ0Z_1_LC_1_3_6/clk
+Hold Constraint  : 0p
+Path slack       : 1066p
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)      0
++ Capture Clock Source Latency                          0
++ Capture Clock Path Delay                           2381
+- Setup Time                                            0
+--------------------------------------------------   ---- 
+End-of-path required time (ps)                       2381
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                    526
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       3447
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+Data path
+pin name                  model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_0_LC_1_3_0/lcout  LogicCell40_SEQ_MODE_1011    540              2921   1066  FALL       2
+I__24/I                   LocalMux                       0              2921   1066  FALL       1
+I__24/O                   LocalMux                     309              3230   1066  FALL       1
+I__26/I                   InMux                          0              3230   1066  FALL       1
+I__26/O                   InMux                        217              3447   1066  FALL       1
+ledsZ0Z_1_LC_1_3_6/in3    LogicCell40_SEQ_MODE_1010      0              3447   1066  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 5 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_1_LC_1_3_6/sr
+Capture Clock    : ledsZ0Z_1_LC_1_3_6/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    -INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                             0
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_1_LC_1_3_6/sr           LogicCell40_SEQ_MODE_1010      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 6 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_3_LC_1_3_3/sr
+Capture Clock    : ledsZ0Z_3_LC_1_3_3/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    -INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                             0
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2298
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2298
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  FALL       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  FALL       1
+reset_ibuf_iopad/DOUT           IO_PAD                       460               460   +INF  FALL       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               460   +INF  FALL       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               923   +INF  FALL       1
+I__13/I                         Odrv4                          0               923   +INF  FALL       1
+I__13/O                         Odrv4                        372              1295   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1295   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1631   +INF  FALL       1
+I__15/I                         LocalMux                       0              1631   +INF  FALL       1
+I__15/O                         LocalMux                     309              1940   +INF  FALL       1
+I__16/I                         SRMux                          0              1940   +INF  FALL       1
+I__16/O                         SRMux                        358              2298   +INF  FALL       1
+ledsZ0Z_3_LC_1_3_3/sr           LogicCell40_SEQ_MODE_1010      0              2298   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 7 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_1_LC_1_3_6/lcout
+Path End         : leds[1]
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_1_LC_1_3_6/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_1_LC_1_3_6/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__21/I                           LocalMux                       0              2921   +INF  RISE       1
+I__21/O                           LocalMux                     330              3251   +INF  RISE       1
+I__23/I                           IoInMux                        0              3251   +INF  RISE       1
+I__23/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_1_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_1_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_1_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_1_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[1]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 8 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_3_LC_1_3_3/lcout
+Path End         : leds[3]
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_3_LC_1_3_3/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_3_LC_1_3_3/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__29/I                           LocalMux                       0              2921   +INF  RISE       1
+I__29/O                           LocalMux                     330              3251   +INF  RISE       1
+I__31/I                           IoInMux                        0              3251   +INF  RISE       1
+I__31/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_3_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_3_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_3_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_3_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[3]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 9 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_2_LC_1_3_2/sr
+Capture Clock    : ledsZ0Z_2_LC_1_3_2/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    -INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                             0
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_2_LC_1_3_2/sr           LogicCell40_SEQ_MODE_1010      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+
+
+++++ Path 10 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_2_LC_1_3_2/lcout
+Path End         : leds[2]
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_2_LC_1_3_2/clk                               LogicCell40_SEQ_MODE_1010      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_2_LC_1_3_2/lcout          LogicCell40_SEQ_MODE_1010    540              2921   +INF  RISE       2
+I__33/I                           LocalMux                       0              2921   +INF  RISE       1
+I__33/O                           LocalMux                     330              3251   +INF  RISE       1
+I__35/I                           IoInMux                        0              3251   +INF  RISE       1
+I__35/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_2_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_2_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_2_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_2_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[2]                           blink_leds                     0              7836   +INF  FALL       1
+
+
+++++ Path 11 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : reset
+Path End         : ledsZ0Z_0_LC_1_3_0/sr
+Capture Clock    : ledsZ0Z_0_LC_1_3_0/clk
+Hold Constraint  : -INF
+Path slack       : +INF
+
+Capture Clock Arrival Time (blink_leds|enable:R#1)    -INF
++ Capture Clock Source Latency                           0
++ Capture Clock Path Delay                            2381
+- Setup Time                                             0
+--------------------------------------------------   ----- 
+End-of-path required time (ps)                        -INF
+
+Launch Clock Arrival Time (DEFAULT:R#0)      0
++ Launch Clock Source Latency                0
++ Input Delay                                0
++ Data Path Delay                         2348
+---------------------------------------   ---- 
+End-of-path arrival time (ps)             2348
+ 
+Data path
+pin name                        model name                 delay  cumulative delay  slack  edge  Fanout
+------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+reset                           blink_leds                     0                 0   +INF  RISE       1
+reset_ibuf_iopad/PACKAGEPIN:in  IO_PAD                         0                 0   +INF  RISE       1
+reset_ibuf_iopad/DOUT           IO_PAD                       510               510   +INF  RISE       1
+reset_ibuf_preio/PADIN          PRE_IO_PIN_TYPE_000001         0               510   +INF  RISE       1
+reset_ibuf_preio/DIN0           PRE_IO_PIN_TYPE_000001       463               973   +INF  FALL       1
+I__13/I                         Odrv4                          0               973   +INF  FALL       1
+I__13/O                         Odrv4                        372              1345   +INF  FALL       1
+I__14/I                         Span4Mux_s3_v                  0              1345   +INF  FALL       1
+I__14/O                         Span4Mux_s3_v                337              1681   +INF  FALL       1
+I__15/I                         LocalMux                       0              1681   +INF  FALL       1
+I__15/O                         LocalMux                     309              1990   +INF  FALL       1
+I__16/I                         SRMux                          0              1990   +INF  FALL       1
+I__16/O                         SRMux                        358              2348   +INF  FALL       1
+ledsZ0Z_0_LC_1_3_0/sr           LogicCell40_SEQ_MODE_1011      0              2348   +INF  FALL       1
+
+Capture Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+
+
+++++ Path 12 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ 
+
+Path Begin       : ledsZ0Z_0_LC_1_3_0/lcout
+Path End         : leds[0]
+Hold Constraint  : -INF
+Path slack       : +INF
+
+End-of-path required time (ps)           +INF
+
+Launch Clock Arrival Time (blink_leds|enable:R#1)      0
++ Launch Clock Source Latency                          0
++ Launch Clock Path Delay                           2381
++ Clock To Q                                         540
++ Data Path Delay                                   4915
+-------------------------------------------------   ---- 
+End-of-path arrival time (ps)                       7836
+ 
+Launch Clock Path
+pin name                                             model name                 delay  cumulative delay  edge  Fanout
+---------------------------------------------------  -------------------------  -----  ----------------  ----  ------
+enable                                               blink_leds                     0                 0  RISE       1
+enable_ibuf_gb_io_iopad/PACKAGEPIN:in                IO_PAD                         0                 0  RISE       1
+enable_ibuf_gb_io_iopad/DOUT                         IO_PAD                       510               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/PADSIGNALTOGLOBALBUFFER  PRE_IO_GBUF                    0               510  RISE       1
+enable_ibuf_gb_io_preiogbuf/GLOBALBUFFEROUTPUT       PRE_IO_GBUF                 1408              1918  RISE       1
+I__17/I                                              gio2CtrlBuf                    0              1918  RISE       1
+I__17/O                                              gio2CtrlBuf                    0              1918  RISE       1
+I__18/I                                              GlobalMux                      0              1918  RISE       1
+I__18/O                                              GlobalMux                    154              2073  RISE       1
+I__19/I                                              ClkMux                         0              2073  RISE       1
+I__19/O                                              ClkMux                       309              2381  RISE       1
+ledsZ0Z_0_LC_1_3_0/clk                               LogicCell40_SEQ_MODE_1011      0              2381  RISE       1
+
+Data path
+pin name                          model name                 delay  cumulative delay  slack  edge  Fanout
+--------------------------------  -------------------------  -----  ----------------  -----  ----  ------
+ledsZ0Z_0_LC_1_3_0/lcout          LogicCell40_SEQ_MODE_1011    540              2921   +INF  RISE       2
+I__25/I                           LocalMux                       0              2921   +INF  RISE       1
+I__25/O                           LocalMux                     330              3251   +INF  RISE       1
+I__27/I                           IoInMux                        0              3251   +INF  RISE       1
+I__27/O                           IoInMux                      259              3510   +INF  RISE       1
+leds_obuf_0_preio/DOUT0           PRE_IO_PIN_TYPE_011001         0              3510   +INF  RISE       1
+leds_obuf_0_preio/PADOUT          PRE_IO_PIN_TYPE_011001      2237              5748   +INF  FALL       1
+leds_obuf_0_iopad/DIN             IO_PAD                         0              5748   +INF  FALL       1
+leds_obuf_0_iopad/PACKAGEPIN:out  IO_PAD                      2088              7836   +INF  FALL       1
+leds[0]                           blink_leds                     0              7836   +INF  FALL       1
+
+===================================================================== 
+                    End of Detailed Hold Report for all timing paths 
+##################################################################### 
+
+##################################################################### 
+                    End of Timing Report 
+##################################################################### 
+

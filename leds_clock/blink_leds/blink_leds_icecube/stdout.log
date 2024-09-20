@@ -1,0 +1,79 @@
+Running in Lattice mode
+
+
+Starting:    C:\HDL\IceStick\IceCube\synpbase\bin64\mbin\synbatch.exe
+Install:     C:\HDL\IceStick\IceCube\synpbase
+Hostname:    THIAGO-ACER
+Date:        Thu Sep 19 18:23:41 2024
+Version:     L-2016.09L+ice40
+
+Arguments:   -product synplify_pro -batch blink_leds_icecube_syn.prj
+ProductType: synplify_pro
+
+
+
+
+
+auto_infer_blackbox is not supported in current product.
+log file: "C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.srr"
+Running: blink_leds_icecube_Implmnt in foreground
+
+Running blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+
+Running: compile (Compile) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:41 2024
+
+Running: compile_flow (Compile Process) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:41 2024
+
+Running: compiler (Compile Input) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:41 2024
+Copied C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_comp.srs to C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.srs
+
+compiler completed
+# Thu Sep 19 18:23:43 2024
+
+Return Code: 0
+Run Time:00h:00m:02s
+
+Running: multi_srs_gen (Multi-srs Generator) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:43 2024
+
+multi_srs_gen completed
+# Thu Sep 19 18:23:43 2024
+
+Return Code: 0
+Run Time:00h:00m:00s
+Copied C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_mult.srs to C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.srs
+Complete: Compile Process on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+
+Running: premap (Pre-mapping) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:43 2024
+
+premap completed with warnings
+# Thu Sep 19 18:23:43 2024
+
+Return Code: 1
+Run Time:00h:00m:00s
+Complete: Compile on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+
+Running: map (Map) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:43 2024
+License granted for 4 parallel jobs
+
+Running: fpga_mapper (Map & Optimize) on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+# Thu Sep 19 18:23:43 2024
+Copied C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\synwork\blink_leds_icecube_m.srm to C:\HDL\IceStick\Projects\blink_leds\blink_leds_icecube\blink_leds_icecube_Implmnt\blink_leds_icecube.srm
+
+fpga_mapper completed with warnings
+# Thu Sep 19 18:23:44 2024
+
+Return Code: 1
+Run Time:00h:00m:01s
+Complete: Map on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+Complete: Logic Synthesis on blink_leds_icecube_syn|blink_leds_icecube_Implmnt
+
+exit status=0
+
+exit status=0
+

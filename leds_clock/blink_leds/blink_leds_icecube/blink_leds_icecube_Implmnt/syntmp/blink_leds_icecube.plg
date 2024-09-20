@@ -1,0 +1,12 @@
+@P:  Worst Slack : -0.482
+@P:  blink_leds|enable - Estimated Frequency : 311.2 MHz
+@P:  blink_leds|enable - Requested Frequency : 366.1 MHz
+@P:  blink_leds|enable - Estimated Period : 3.213
+@P:  blink_leds|enable - Requested Period : 2.731
+@P:  blink_leds|enable - Slack : -0.482
+@P: blink_leds Part : ice40hx1ktq144
+@P: blink_leds I/O primitives : 6
+@P: blink_leds I/O Register bits : 0
+@P: blink_leds Register bits (Non I/O) : 4 (0%)
+@P: blink_leds Total Luts : 0 (0%)
+@P:  CPU Time : 0h:00m:00s

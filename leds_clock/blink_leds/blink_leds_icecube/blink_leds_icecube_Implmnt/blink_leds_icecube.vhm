@@ -1,0 +1,194 @@
+--
+-- Written by Synplicity
+-- Product Version "L-2016.09L+ice40"
+-- Program "Synplify Pro", Mapper "maplat, Build 1612R"
+-- Thu Sep 19 18:23:09 2024
+--
+
+--
+-- Written by Synplify Pro version Build 1612R
+-- Thu Sep 19 18:23:09 2024
+--
+
+--
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+library synplify;
+use synplify.components.all;
+library work;
+use work.vcomponent_vital.all; 
+use work.std_logic_SBT.all; 
+
+entity blink_leds is
+port(
+  reset :  in std_logic;
+  enable :  in std_logic;
+  leds : out std_logic_vector(3 downto 0));
+end blink_leds;
+
+architecture beh of blink_leds is
+  signal LEDS_C : std_logic_vector(3 downto 0);
+  signal NN_1 : std_logic ;
+  signal NN_2 : std_logic ;
+  signal RESET_C : std_logic ;
+  signal RESET_INTERNAL : std_logic ;
+  signal ENABLE_INTERNAL : std_logic ;
+  signal NN_3 : std_logic ;
+  signal LEDS_4 : std_logic ;
+  signal LEDS_5 : std_logic ;
+  signal LEDS_6 : std_logic ;
+  signal ENABLE_C_G : std_logic ;
+  signal N_1 : std_logic ;
+  signal N_2 : std_logic ;
+  signal N_3 : std_logic ;
+  signal N_4 : std_logic ;
+  signal N_5 : std_logic ;
+  signal N_6 : std_logic ;
+  signal N_7 : std_logic ;
+  signal N_8 : std_logic ;
+  signal N_9 : std_logic ;
+  signal N_10 : std_logic ;
+  signal N_11 : std_logic ;
+begin
+ENABLE_IBUF_GB_IO: SB_GB_IO 
+generic map(
+  PIN_TYPE => "000001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => ENABLE_INTERNAL,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => NN_1,
+  D_IN_1 => N_1,
+  D_IN_0 => N_2,
+  GLOBAL_BUFFER_OUTPUT => ENABLE_C_G);
+RESET_IBUF: SB_IO 
+generic map(
+  PIN_TYPE => "000001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => RESET_INTERNAL,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => NN_1,
+  D_IN_1 => N_3,
+  D_IN_0 => RESET_C);
+\LEDS_OBUF[0]\: SB_IO 
+generic map(
+  PIN_TYPE => "011001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => NN_3,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => LEDS_C(0),
+  D_IN_1 => N_4,
+  D_IN_0 => N_5);
+\LEDS_OBUF[1]\: SB_IO 
+generic map(
+  PIN_TYPE => "011001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => LEDS_4,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => LEDS_C(1),
+  D_IN_1 => N_6,
+  D_IN_0 => N_7);
+\LEDS_OBUF[2]\: SB_IO 
+generic map(
+  PIN_TYPE => "011001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => LEDS_5,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => LEDS_C(2),
+  D_IN_1 => N_8,
+  D_IN_0 => N_9);
+\LEDS_OBUF[3]\: SB_IO 
+generic map(
+  PIN_TYPE => "011001",
+  PULLUP => '0',
+  NEG_TRIGGER => '0',
+  IO_STANDARD => "SB_LVCMOS"
+)
+port map (
+  PACKAGE_PIN => LEDS_6,
+  LATCH_INPUT_VALUE => NN_1,
+  CLOCK_ENABLE => NN_1,
+  INPUT_CLK => NN_1,
+  OUTPUT_CLK => NN_1,
+  OUTPUT_ENABLE => NN_2,
+  D_OUT_1 => NN_1,
+  D_OUT_0 => LEDS_C(3),
+  D_IN_1 => N_10,
+  D_IN_0 => N_11);
+\LEDS[0]_Z39\: SB_DFFS port map (
+    Q => LEDS_C(0),
+    D => LEDS_C(3),
+    C => ENABLE_C_G,
+    S => RESET_C);
+\LEDS[1]_Z40\: SB_DFFR port map (
+    Q => LEDS_C(1),
+    D => LEDS_C(0),
+    C => ENABLE_C_G,
+    R => RESET_C);
+\LEDS[2]_Z41\: SB_DFFR port map (
+    Q => LEDS_C(2),
+    D => LEDS_C(1),
+    C => ENABLE_C_G,
+    R => RESET_C);
+\LEDS[3]_Z42\: SB_DFFR port map (
+    Q => LEDS_C(3),
+    D => LEDS_C(2),
+    C => ENABLE_C_G,
+    R => RESET_C);
+II_GND: GND port map (
+    Y => NN_1);
+II_VCC: VCC port map (
+    Y => NN_2);
+leds(0) <= NN_3;
+leds(1) <= LEDS_4;
+leds(2) <= LEDS_5;
+leds(3) <= LEDS_6;
+RESET_INTERNAL <= reset;
+ENABLE_INTERNAL <= enable;
+end beh;
+

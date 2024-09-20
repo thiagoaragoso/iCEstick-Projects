@@ -1,0 +1,55 @@
+ble_pack foo.un5_counter_cry_1_c_LC_46 {foo.un5_counter_cry_1_c}
+ble_pack foo.counter[2]_LC_20 {foo.counter[2], foo.un5_counter_cry_2_c, foo.counter_RNO[2]}
+ble_pack foo.counter[3]_LC_24 {foo.counter[3], foo.un5_counter_cry_3_c, foo.counter_RNO[3]}
+ble_pack foo.counter[4]_LC_25 {foo.counter[4], foo.un5_counter_cry_4_c, foo.counter_RNO[4]}
+ble_pack foo.counter[5]_LC_26 {foo.counter[5], foo.un5_counter_cry_5_c, foo.counter_RNO[5]}
+ble_pack foo.counter[6]_LC_27 {foo.counter[6], foo.un5_counter_cry_6_c, foo.counter_RNO[6]}
+ble_pack foo.un5_counter_cry_6_THRU_LUT4_0_LC_43 {foo.un5_counter_cry_7_c, foo.un5_counter_cry_6_THRU_LUT4_0}
+ble_pack foo.un5_counter_cry_7_THRU_LUT4_0_LC_44 {foo.un5_counter_cry_8_c, foo.un5_counter_cry_7_THRU_LUT4_0}
+clb_pack PLB_0 {foo.un5_counter_cry_1_c_LC_46, foo.counter[2]_LC_20, foo.counter[3]_LC_24, foo.counter[4]_LC_25, foo.counter[5]_LC_26, foo.counter[6]_LC_27, foo.un5_counter_cry_6_THRU_LUT4_0_LC_43, foo.un5_counter_cry_7_THRU_LUT4_0_LC_44}
+ble_pack foo.counter[9]_LC_30 {foo.counter[9], foo.un5_counter_cry_9_c, foo.counter_RNO[9]}
+ble_pack foo.un5_counter_cry_9_THRU_LUT4_0_LC_45 {foo.un5_counter_cry_10_c, foo.un5_counter_cry_9_THRU_LUT4_0}
+ble_pack foo.un5_counter_cry_10_THRU_LUT4_0_LC_37 {foo.un5_counter_cry_11_c, foo.un5_counter_cry_10_THRU_LUT4_0}
+ble_pack foo.counter[12]_LC_12 {foo.counter[12], foo.un5_counter_cry_12_c, foo.counter_RNO[12]}
+ble_pack foo.counter[13]_LC_13 {foo.counter[13], foo.un5_counter_cry_13_c, foo.counter_RNO[13]}
+ble_pack foo.counter[14]_LC_14 {foo.counter[14], foo.un5_counter_cry_14_c, foo.counter_RNO[14]}
+ble_pack foo.un5_counter_cry_14_THRU_LUT4_0_LC_38 {foo.un5_counter_cry_15_c, foo.un5_counter_cry_14_THRU_LUT4_0}
+ble_pack foo.un5_counter_cry_15_THRU_LUT4_0_LC_39 {foo.un5_counter_cry_16_c, foo.un5_counter_cry_15_THRU_LUT4_0}
+clb_pack PLB_1 {foo.counter[9]_LC_30, foo.un5_counter_cry_9_THRU_LUT4_0_LC_45, foo.un5_counter_cry_10_THRU_LUT4_0_LC_37, foo.counter[12]_LC_12, foo.counter[13]_LC_13, foo.counter[14]_LC_14, foo.un5_counter_cry_14_THRU_LUT4_0_LC_38, foo.un5_counter_cry_15_THRU_LUT4_0_LC_39}
+ble_pack foo.un5_counter_cry_16_THRU_LUT4_0_LC_40 {foo.un5_counter_cry_17_c, foo.un5_counter_cry_16_THRU_LUT4_0}
+ble_pack foo.counter[18]_LC_18 {foo.counter[18], foo.un5_counter_cry_18_c, foo.counter_RNO[18]}
+ble_pack foo.un5_counter_cry_18_THRU_LUT4_0_LC_41 {foo.un5_counter_cry_19_c, foo.un5_counter_cry_18_THRU_LUT4_0}
+ble_pack foo.un5_counter_cry_19_THRU_LUT4_0_LC_42 {foo.un5_counter_cry_20_c, foo.un5_counter_cry_19_THRU_LUT4_0}
+ble_pack foo.counter[21]_LC_22 {foo.counter[21], foo.un5_counter_cry_21_c, foo.counter_RNO[21]}
+ble_pack foo.counter[22]_LC_23 {foo.counter[22], foo.counter_RNO[22]}
+clb_pack PLB_2 {foo.un5_counter_cry_16_THRU_LUT4_0_LC_40, foo.counter[18]_LC_18, foo.un5_counter_cry_18_THRU_LUT4_0_LC_41, foo.un5_counter_cry_19_THRU_LUT4_0_LC_42, foo.counter[21]_LC_22, foo.counter[22]_LC_23}
+ble_pack foo.counter_RNI08Q71[22]_LC_0 {foo.counter_RNI08Q71[22]}
+ble_pack foo.counter_RNIALJ44[2]_LC_2 {foo.counter_RNIALJ44[2]}
+ble_pack foo.counter_RNIJ8NM[2]_LC_4 {foo.counter_RNIJ8NM[2]}
+ble_pack foo.counter[0]_LC_8 {foo.counter[0], foo.counter_RNO[0]}
+ble_pack foo.counter_RNIV6AU[4]_LC_7 {foo.counter_RNIV6AU[4]}
+ble_pack foo.counter_RNIOTN71[10]_LC_5 {foo.counter_RNIOTN71[10]}
+ble_pack foo.counter[10]_LC_10 {foo.counter[10], foo.counter_RNO[10]}
+clb_pack PLB_3 {foo.counter_RNI08Q71[22]_LC_0, foo.counter_RNIALJ44[2]_LC_2, foo.counter_RNIJ8NM[2]_LC_4, foo.counter[0]_LC_8, foo.counter_RNIV6AU[4]_LC_7, foo.counter_RNIOTN71[10]_LC_5, foo.counter[10]_LC_10}
+ble_pack foo.counter_RNI9NE82[14]_LC_1 {foo.counter_RNI9NE82[14]}
+ble_pack foo.counter_RNIEHGH[1]_LC_3 {foo.counter_RNIEHGH[1]}
+ble_pack foo.counter[1]_LC_9 {foo.counter[1], foo.counter_RNO[1]}
+ble_pack foo.counter_RNIV5131[7]_LC_6 {foo.counter_RNIV5131[7]}
+ble_pack foo.counter[7]_LC_28 {foo.counter[7], foo.counter_RNO[7]}
+ble_pack foo.enable_RNIKS5P6_LC_31 {foo.enable_RNIKS5P6}
+ble_pack foo.counter[11]_LC_11 {foo.counter[11], foo.counter_RNO[11]}
+ble_pack foo.counter[15]_LC_15 {foo.counter[15], foo.counter_RNO[15]}
+clb_pack PLB_4 {foo.counter_RNI9NE82[14]_LC_1, foo.counter_RNIEHGH[1]_LC_3, foo.counter[1]_LC_9, foo.counter_RNIV5131[7]_LC_6, foo.counter[7]_LC_28, foo.enable_RNIKS5P6_LC_31, foo.counter[11]_LC_11, foo.counter[15]_LC_15}
+ble_pack foo.counter[16]_LC_16 {foo.counter[16], foo.counter_RNO[16]}
+ble_pack foo.counter[17]_LC_17 {foo.counter[17], foo.counter_RNO[17]}
+ble_pack foo.counter[19]_LC_19 {foo.counter[19], foo.counter_RNO[19]}
+ble_pack foo.counter[20]_LC_21 {foo.counter[20], foo.counter_RNO[20]}
+ble_pack foo.counter[8]_LC_29 {foo.counter[8], foo.counter_RNO[8]}
+clb_pack PLB_5 {foo.counter[16]_LC_16, foo.counter[17]_LC_17, foo.counter[19]_LC_19, foo.counter[20]_LC_21, foo.counter[8]_LC_29}
+ble_pack foo.enable_LC_32 {foo.enable, foo.enable_RNO}
+clb_pack PLB_6 {foo.enable_LC_32}
+ble_pack bar.leds[0]_LC_33 {bar.leds[0], bar.leds_0_THRU_LUT4_0}
+ble_pack bar.leds[1]_LC_34 {bar.leds[1], bar.leds_1_THRU_LUT4_0}
+ble_pack bar.leds[2]_LC_35 {bar.leds[2], bar.leds_2_THRU_LUT4_0}
+ble_pack bar.leds[3]_LC_36 {bar.leds[3], bar.leds_3_THRU_LUT4_0}
+clb_pack PLB_7 {bar.leds[0]_LC_33, bar.leds[1]_LC_34, bar.leds[2]_LC_35, bar.leds[3]_LC_36}
