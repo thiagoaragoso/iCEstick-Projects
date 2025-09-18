@@ -43,7 +43,7 @@ Programming tool:	Diamond Programmer
 For default configuration (loopback at 115200 baudrate):
 
 Resource | Absolute Usage | Relative Usage
--------------|---------:|---:
+-------------|----------|------
 LogicCells   | 106/ 1280|  8.3%
 PLBs         |  20/  160| 12.5%
 BRAMs        |   0/   16|    0%
