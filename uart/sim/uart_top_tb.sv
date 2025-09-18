@@ -22,12 +22,14 @@ module uart_top_tb;
   //Reference uart_rx to check DUT's output
   logic [7:0] ref_byte;
   logic       ref_valid;
+  logic       ref_written;
   uart_rx #(.BAUD(BAUD)) ref_rx (
     .clk(clk),
     .rst(rst),
     .rx_serial(tx_serial),
     .rx_byte(ref_byte),
-    .valid(ref_valid)
+    .rx_valid(ref_valid),
+    .data_written(ref_written)
   );
 
   //Clock generation

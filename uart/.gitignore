@@ -1,0 +1,4 @@
+/sim/work/
+*.wlf
+/syn/uart_loopback/
+/extra/change_case/

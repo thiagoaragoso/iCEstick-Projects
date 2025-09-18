@@ -1,93 +1,53 @@
 /*A UART transmitter
-  UART format: 8N1, or 8 data bits, no parity bits, 1 stop bit 
+  UART format: 8N1, or 8 data bits, no parity bits, 1 stop bit
+  BAUD = number of cycles/bit (104 by default)
 */
 
 module uart_tx
   #(parameter integer BAUD = 104)
   (input    wire        clk,
-   input    wire        rst,
-   input    wire        valid,       //high when tx_byte is ready to be sampled
-   input    wire [7:0]  tx_byte,     //byte being transmitted
-   output   reg         tx_serial,   //serial data output
-   output   wire        tx_busy);    //signals if transmitter is busy
+   input    wire [7:0]  rx_byte,      //byte being transmitted
+   input    wire        rx_valid,     //signals rx_byte is ready to be sampled
+   output   reg         data_written, //confirms rx_byte was sampled
+   output   reg         tx_serial);   //serial data output
+  
 
-  localparam  IDLE  = 2'b00;
-  localparam  START = 2'b01;
-  localparam  DATA  = 2'b10;
-  localparam  STOP  = 2'b11;
+  localparam  IDLE  = 1'b0;
+  localparam  STREAM = 1'b1;
 
-  reg [1:0] STATE;
+  reg       STATE;
   reg [7:0] clk_count;
-  reg [2:0] bit_index;
-  reg [7:0] tx_data;    //samples and stores tx_byte 
-
-  assign tx_busy = (STATE != IDLE);
+  reg [9:0] tx_data;    //data to be transmitted
 
   //state machine
-  always @(posedge clk or posedge rst) begin
-    if (rst) begin
-      clk_count <= 0;
-      bit_index <= 0;
-      tx_data   <= 0;
-      tx_serial <= 1;   //idles high
-      STATE <= IDLE;
-    end else begin
-      case (STATE)
-        //wait for start signal (valid going high)
-        IDLE:
-        begin
-          clk_count <= 0;
-          bit_index <= 0;
-          tx_data   <= 0;
-          tx_serial <= 1;
-          if (valid) begin
-            tx_data   <= tx_byte;
-            STATE     <= START;
-          end
+  always @(posedge clk) begin
+    case (STATE)
+      IDLE: begin   //wait for start signal
+        clk_count       <= 0;
+        data_written    <= 0;
+        tx_serial       <= 1;
+        if (rx_valid) begin
+          tx_data       <= {1'b1, rx_byte, 1'b0}; //stop + data + start bits
+          data_written  <= 1;
+          STATE         <= STREAM;
         end
+      end
 
-        //transmit start bit for one BAUD
-        START:      
-        begin
-          tx_serial <= 0;   //low indicates start bit
-          if (clk_count == BAUD - 1) begin
-            clk_count <= 0;
-            STATE     <= DATA;
-          end else begin
-            clk_count <= clk_count + 1;
+      STREAM: begin  //transmit each bit for one BAUD
+        tx_serial <= tx_data[0];
+        if (clk_count == BAUD - 1) begin
+          tx_data       <= tx_data >> 1;  //use tx_data as bit counter
+          clk_count     <= 0;
+          data_written  <= 0;             //data_written is held for 1 BAUD
+          if (!(|tx_data[9:1])) begin //if all but LSB is 0, then stop bit was sent
+            STATE <= IDLE;
           end
+        end else begin
+          clk_count <= clk_count + 1;
         end
+      end
 
-        //send 8 bits of data, LSB first
-        DATA:
-        begin
-          tx_serial <= tx_data[bit_index];
-          if (clk_count == BAUD - 1) begin
-            clk_count <= 0;
-            if (bit_index == 3'd7) begin
-              STATE <= STOP;
-            end else begin
-              bit_index <= bit_index + 1;
-            end
-          end else begin
-            clk_count <= clk_count + 1;
-          end
-        end
-
-        //transmit stop bit for one BAUD, then IDLE
-        STOP:
-        begin
-          tx_serial <= 1;   //high indicates stop bit
-          if (clk_count == BAUD - 1) begin
-            clk_count <= 0;
-            STATE     <= IDLE;
-          end else begin
-            clk_count <= clk_count + 1;
-          end
-        end
-
-        default: STATE <= IDLE;
-      endcase
-    end
+      default: STATE <= IDLE;
+    endcase
   end
 endmodule

@@ -1,14 +1,15 @@
 /*A UART receiver
-  UART format: 8N1, or 8 data bits, no parity bits, 1 stop bit 
+  UART format: 8N1, or 8 data bits, no parity bits, 1 stop bit
+  BAUD = number of cycles/bit (104 by default)
 */
 
 module uart_rx
   #(parameter integer BAUD = 104)
-  (input  wire      clk,
-   input  wire      rst,
-   input  wire      rx_serial,  //received data stream
-   output reg [7:0] rx_byte,    //converted data
-   output reg       valid);     //signals whether rx_byte is ready to be sampled
+  (input  wire       clk,
+   input  wire       rx_serial,      //received data stream
+   output wire [7:0] rx_byte,        //byte received
+   output wire       rx_valid,       //signals rx_byte is ready to be sampled
+   input  wire       data_written);  //confirms rx_byte was received
 
   localparam  IDLE  = 2'b00;
   localparam  START = 2'b01;
@@ -17,76 +18,57 @@ module uart_rx
 
   reg [1:0] STATE;
   reg [7:0] clk_count;
-  reg [2:0] bit_index;
-  reg rx_sync1, rx_sync2;       //synchronizes rx_serial to current clock domain
+  reg [3:0] bit_index;
+  
+  //Consider the valid/stop bit together with data bits to simplify the FSM
+  reg [8:0] rx_data;
+  assign rx_valid = rx_data[8];
+  assign rx_byte  = rx_data[7:0];
 
   //state machine
-  always @(posedge clk or posedge rst) begin
-    if (rst) begin
-      rx_sync1 <= 1;
-      rx_sync2 <= 1;
-      clk_count <= 0;
-      bit_index <= 0;
-      valid <= 0;
-      STATE <= IDLE;
-    end else begin
-      rx_sync1 <= rx_serial;  //synchronize rx_serial
-      rx_sync2 <= rx_sync1;
-      
-      case (STATE)
-        //wait for transmitter's start signal (rx_sync2 going low)
-        IDLE:
-        begin
+  always @(posedge clk) begin
+    case (STATE)
+      IDLE: begin   //wait for start signal (rx_serial going low)
+        clk_count <= 0;
+        bit_index <= 0;
+        rx_data   <= 0;
+        if (!rx_serial) begin
+          STATE <= START;
+        end
+      end
+
+      START: begin  //wait for one half BAUD (best time to sample data)
+        if (clk_count ==  BAUD / 2) begin
           clk_count <= 0;
-          bit_index <= 0;
-          valid     <= 0;
-          if (!rx_sync2) begin
-            STATE <= START;
-          end
+          STATE <= (rx_serial) ? IDLE : DATA;  //reset if start bit is not low
+        end else begin
+          clk_count <= clk_count + 1;
         end
+      end
 
-        //wait for one half BAUD (best time to sample data)
-        START:      
-        begin
-          if (clk_count ==  BAUD / 2) begin
-            clk_count <= 0;
-            STATE <= DATA;
-          end else begin
-            clk_count <= clk_count + 1;
+      DATA: begin   //sample 8 bits of data + stop bit
+        if (clk_count == BAUD - 1) begin
+          rx_data[bit_index] <= rx_serial;
+          clk_count <= 0;
+          bit_index <= bit_index + 1;
+          if (bit_index == 8) begin
+            STATE <= (rx_serial) ? STOP : IDLE; //reset if stop bit is low
           end
+        end else begin
+          clk_count <= clk_count + 1;
         end
+      end
 
-        //sample 8 bits of data
-        DATA:
-        begin
-          if (clk_count == BAUD - 1) begin
-            rx_byte[bit_index] <= rx_sync2;
-            clk_count <= 0;
-            bit_index <= bit_index + 1;
-            if (bit_index == 3'd7) begin
-              STATE <= STOP;
-            end
-          end else begin
-            clk_count <= clk_count + 1;
-          end
+      /*wait until data is confirmed saved; technically, we should wait for 
+        0.5*BAUD always, but idling early is only an issue if the PC is transmitting
+        strangely, and idling late means there are bigger issues with the design*/
+      STOP: begin
+        if (data_written) begin
+          STATE <= IDLE;
         end
+      end
 
-        /*check if STOP bit was received; if not, scrap corrupted data.
-          else, set valid high so rx_byte can be sampled. Then switch to idle*/
-        STOP:   
-        begin
-          if (clk_count == BAUD - 1) begin
-            if (rx_sync2) begin
-              valid <= 1;
-            end
-            STATE <= IDLE;
-          end else begin
-            clk_count <= clk_count + 1;
-          end
-        end
-
-        default: STATE <= IDLE;
-      endcase
-    end
+      default: STATE <= IDLE;
+    endcase
   end
 endmodule
