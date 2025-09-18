@@ -4,54 +4,41 @@ module uart_tx_tb;
   parameter BAUD = 104;
 
   logic       clk;
-  logic       rst;
-  logic       valid;
-  logic [7:0] tx_byte;
+  logic [7:0] rx_byte;
+  logic       rx_valid;
+  logic       data_written;
   logic       tx_serial;
-  logic       tx_busy;
   logic [7:0] expected_byte;
 
   //Instantiate DUT
   uart_tx #(.BAUD(BAUD)) dut (
     .clk(clk),
-    .rst(rst),
-    .valid(valid),
-    .tx_byte(tx_byte),
-    .tx_serial(tx_serial),
-    .tx_busy(tx_busy)
+    .rx_byte(rx_byte),
+    .rx_valid(rx_valid),
+    .data_written(data_written),
+    .tx_serial(tx_serial)
   );
 
   //Clock generation
   initial clk = 0;
   always #(42) clk = ~clk;  //12MHz clock -> 83.333ns period -> round to 84ns
 
-  //Task to send a byte for uart_tx to transmit
-  task automatic send_byte(input logic [7:0] data);
-    begin
-      wait (!tx_busy);  //wait for uart_tx to be ready
-      tx_byte  <= data;
-      valid <= 1'b1;
-      @(posedge clk);
-      valid <= 1'b0;  //pulse valid for one cycle
-    end
-  endtask
-
   //Test random byte inputs with random delays in between
   initial begin
     //reset
-    rst = 1;
-    tx_byte = 0;
-    valid = 0;
+    rx_byte = 0;
+    rx_valid = 0;
     repeat(BAUD) @(posedge clk);
-    rst = 0;
 
     //send 100 random bytes
     for (int i=0; i < 100; i++) begin
       expected_byte = $urandom_range(255,0);
-      send_byte(expected_byte);
+      rx_byte  = expected_byte;
+      rx_valid = 1'b1;
+      wait (data_written);
+      rx_valid = 1'b0;
 
       //wait for BAUD/2 cycles (same as when uart_rx should sample)
-      @(posedge tx_busy);
       repeat(BAUD/2) @(posedge clk);
       assert(tx_serial === 1'b0) else
         $error("Error! Start bit not low at time %t", $time);
@@ -67,6 +54,7 @@ module uart_tx_tb;
       repeat(BAUD) @(posedge clk);
       assert(tx_serial === 1'b1) else
           $error("Error! Stop bit not high at time %t", $time);
+      repeat(BAUD/2) @(posedge clk);
 
       //random delay between tests
       repeat($urandom_range(20,0)) @(posedge clk);

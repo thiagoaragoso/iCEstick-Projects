@@ -1,5 +1,3 @@
-README
-
 ## Notes
 My second fpga project. After the leds_clock project, I took time to learn more
 more advanced digital design concepts and standard industry practice, which can

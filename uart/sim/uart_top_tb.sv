@@ -4,7 +4,6 @@ module uart_top_tb;
   parameter BAUD = 104;
 
   logic       clk;
-  logic       rst;
   logic       rx_serial;
   logic       tx_serial;
 
@@ -12,9 +11,8 @@ module uart_top_tb;
   logic [7:0] expected_bytes[$];  //queue to hold expected outputs
 
   //Instantiate DUT
-  uart_top #(.BAUD(BAUD)) dut (
+  uart_top dut (
     .clk(clk),
-    .rst(rst),
     .rx_serial(rx_serial),
     .tx_serial(tx_serial)
   );
@@ -23,13 +21,12 @@ module uart_top_tb;
   logic [7:0] ref_byte;
   logic       ref_valid;
   logic       ref_written;
-  uart_rx #(.BAUD(BAUD)) ref_rx (
+  uart_rx ref_rx (
     .clk(clk),
-    .rst(rst),
     .rx_serial(tx_serial),
     .rx_byte(ref_byte),
     .rx_valid(ref_valid),
-    .data_written(ref_written)
+    .data_written(ref_written) 
   );
 
   //Clock generation
@@ -53,10 +50,9 @@ module uart_top_tb;
   //Test random byte inputs with random delays in between
   initial begin
     //reset
-    rst = 1;
     rx_serial = 1;
-    repeat(BAUD) @(posedge clk);
-    rst = 0;
+    ref_written = 1;
+    repeat(10 * BAUD) @(posedge clk);
 
     //send 100 random bytes
     for (int i = 0; i < 100; i++) begin
@@ -74,16 +70,14 @@ module uart_top_tb;
   end
 
   //Checker: pop from queue when ref_rx receives a byte
-  always @(posedge clk) begin
-    if (ref_valid) begin
-      if (expected_bytes.size() == 0) begin
-        $error("Got unexpected byte %0h at time %0t", ref_byte, $time);
-      end else begin
-        logic [7:0] foo;
-        foo = expected_bytes.pop_front();
-        if (ref_byte !== foo) begin
-          $error("Mismatch! Sent %0h, got %0h", foo, ref_byte);
-        end
+  always @(posedge ref_valid) begin
+    if (expected_bytes.size() == 0) begin
+      $error("Got unexpected byte %0h at time %0t", ref_byte, $time);
+    end else begin
+      logic [7:0] foo;
+      foo = expected_bytes.pop_front();
+      if (ref_byte !== foo) begin
+        $error("Mismatch! Sent %0h, got %0h", foo, ref_byte);
       end
     end
   end

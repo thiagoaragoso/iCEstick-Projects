@@ -4,19 +4,19 @@ module uart_rx_tb;
   parameter BAUD = 104;
 
   logic       clk;
-  logic       rst;
   logic       rx_serial;
   logic [7:0] rx_byte;
-  logic       valid;
+  logic       rx_valid;
+  logic       data_written;
   logic [7:0] expected_byte;
 
   //Instantiate DUT
   uart_rx #(.BAUD(BAUD)) dut (
     .clk(clk),
-    .rst(rst),
     .rx_byte(rx_byte),
     .rx_serial(rx_serial),
-    .valid(valid)
+    .rx_valid(rx_valid),
+    .data_written(data_written) 
   );
 
   //Clock generation
@@ -26,10 +26,9 @@ module uart_rx_tb;
   //Test random byte inputs with random delays in between
   initial begin
     //reset
-    rst = 1;
     rx_serial = 1;
+    data_written = 0;
     repeat(BAUD) @(posedge clk);
-    rst = 0;
 
     //send 100 random bytes
     for (int i=0; i < 100; i++) begin
@@ -45,10 +44,12 @@ module uart_rx_tb;
       rx_serial = 1;
 
       //wait for valid signal and compare
-      @(posedge valid);
+      @(posedge rx_valid);
       assert(rx_byte === expected_byte) else
         $error("Mismatch at time %t! Sent: %h, Received: %b", $time, expected_byte, rx_byte);
-
+      data_written = 1;
+      @(posedge clk);
+      data_written = 0;
       //random delay between tests
       repeat($urandom_range(20,0)) @(posedge clk);
     end
