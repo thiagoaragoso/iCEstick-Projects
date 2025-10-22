@@ -1,6 +1,6 @@
 /*Instruction decoder/Control unit
   RV32I encodings found on page 609-610 (Chapter 35) of the RISC-V Instruction
-  Set Manual Volume 1 Version 20250508, found at
+  Set Manual Volume 1 Version 20250508, found at:
   https://github.com/riscv/riscv-isa-manual/
 
   Note that RV32I encodes the two LSB of all instructions as 2'b1
@@ -9,36 +9,21 @@
 module instr_decoder (
     input   logic [31:0]  instr,
 
-    //basic instruction fields
-    output  logic [4:0]   rdID,
-    output  logic [4:0]   rs1ID,
-    output  logic [4:0]   rs2ID,
+    //Basic instruction fields
+    output  logic [4:0]   rdID, rs1ID, rs2ID,
     output  logic [2:0]   funct3,
     output  logic [6:0]   funct7,
 
-    /*immediates (5 variations)
-      Generating all 5 imm fields now uses a few extra wires/LUTs but has better
-      timing than 1 imm field + a mux based on opcode later */
-    output  logic [31:0]  Iimm,   
-    output  logic [31:0]  Simm,
-    output  logic [31:0]  Bimm,
-    output  logic [31:0]  Uimm,
-    output  logic [31:0]  Jimm,
+    /*Immediates (5 variations)
+      Generating all 5 imm fields now uses fewer resources overall than 1 imm
+      field + a mux every time it's needed later on */
+    output  logic [31:0]  Iimm, Simm, Bimm, Uimm, Jimm,
 
-    /*opcode type (11 different opcodes for 38 unique instructions)
+    /*opcode type (10 different opcodes for 35 unique instructions)
       One-hot encoding for the same reasoning as above; it reduces decode logic
-      later on */
-    output  logic         isLUI,
-    output  logic         isAUIPC,
-    output  logic         isJAL,
-    output  logic         isJALR,
-    output  logic         isBRANCH,
-    output  logic         isLOAD,
-    output  logic         isSTORE,
-    output  logic         isALUI,
-    output  logic         isALUR,
-  //output  logic         isFENCE,
-    output  logic         isSYSTEM
+      later on. Note: FENCE instructions are neglected without memory-mapped I/O */
+    output  logic isLUI, isAUIPC, isJAL, isJALR, isBRANCH, isLOAD, isSTORE,
+                  isALUI, isALUR, isSYSTEM //, isFENCE
   );
 
   always_comb begin
@@ -48,14 +33,14 @@ module instr_decoder (
     funct3    = instr[14:12];
     funct7    = instr[31:25];
 
-    //generate immediates for each type
+    //Generate immediates for each type
     Iimm      = {{21{instr[31]}}, instr[30:20]};
     Simm      = {{21{instr[31]}}, instr[30:25], instr[11:7]};
     Bimm      = {{20{instr[31]}}, instr[7], instr[30:25], instr[11:8], 1'b0};
     Uimm      = {    instr[31]  , instr[30:12], 12'b0};
     Jimm      = {{12{instr[31]}}, instr[19:12], instr[20], instr[30:21], 1'b0};
 
-    //toggle opcode type
+    //Toggle opcode type
     isLUI     = (instr[6:0] == 7'b0110111); //Load upper imm:       rd <= Uimm
     isAUIPC   = (instr[6:0] == 7'b0010111); //Add upper imm to PC:  rd <= PC + Uimm
     isJAL     = (instr[6:0] == 7'b1101111); //Jump & link:          rd <= PC+4; PC <= PC+Jimm
@@ -65,7 +50,7 @@ module instr_decoder (
     isSTORE   = (instr[6:0] == 7'b0100011); //Store in mem:         mem[rs1 + Simm] <= rs2
     isALUI    = (instr[6:0] == 7'b0010011); //ALU immediate:        rd <= rs1 OP Iimm 
     isALUR    = (instr[6:0] == 7'b0110011); //ALU register:         rd <= rs1 OP rs2
-  //isFENCE   = (instr[6:0] == 7'b0001111);   Unnecessary without memory-mapped I/O
+  //isFENCE   = (instr[6:0] == 7'b0001111);
     isSYSTEM  = (instr[6:0] == 7'b1110011); //ECALL/EBREAK: halts CPU/simulation
 
   end

@@ -1,4 +1,5 @@
-/*CPU core. Instantiates all other modules. RV32I format.
+/*CPU core. Instantiates all non-memory modules, the program counter, and the 
+  internal cpu logic. RV32I format.
 */
 
 module cpu_core (
@@ -109,7 +110,7 @@ module cpu_core (
   always_comb begin
     PC_Plus = PC + 4;                                         //reduces 2 (PC+4) adders to 1
     PC_Imm  = PC + (isBRANCH ? Bimm : (isJAL ? Jimm : Uimm)); //reduces 3 (PC+_imm) adders to 1
-    nextPC = ((isBRANCH && take_branch) || isJAL) ? PC_Imm :
+    NEXT_PC = ((isBRANCH && take_branch) || isJAL) ? PC_Imm :
                isJALR ? alu_result : PC_Plus;
   end
 
@@ -135,7 +136,7 @@ module cpu_core (
       PC    <= 32'd0;
       STATE <= FETCH;
     end else begin
-      case(STATE):
+      case(STATE)
         FETCH: begin        //Read instruction from memory
           STATE <= DECODE;
         end
@@ -147,15 +148,15 @@ module cpu_core (
           if (!isSYSTEM) begin    //isSYSTEM halts/loops forever in hardware
             PC  <= NEXT_PC;
           end
-          STATE <= isLoad ? WRITEBACK : FETCH;
+          STATE <= isLOAD ? WRITEBACK : FETCH;
           `ifdef BENCH            //unprivileged ISA: no trap mechanism, simply end simulation
             if(isSYSTEM) $finish();
           `endif  
         end
         WRITEBACK: begin    //Loads need 1 extra cycle to read from memory
-          if(!mem_rbusy) begin
+          //if(!mem_rbusy) begin
             STATE <= FETCH;
-	        end
+	        //end
         end
       endcase
     end

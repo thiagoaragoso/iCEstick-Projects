@@ -2,18 +2,17 @@
   Instantiates cpu_core, memory, and UART.
 
   TO DO:
-  Write testbench
+  Finish testbench
   Add UART
-  Make a compiler
+  Make compiler
   Write a couple cool programs
-
 */
 
 module SOC (
-    input  logic  clk,
-    input  logic  reset,
-    input  logic  RX_line,
-    output logic  TX_line
+  input  logic  clk,
+  input  logic  reset,
+  input  logic  RX_line,
+  output logic  TX_line
 );
   
   logic [31:0] mem_addr;

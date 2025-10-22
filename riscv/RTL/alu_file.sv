@@ -9,7 +9,7 @@ module alu_file (
     output logic        LT_FLAG,
     output logic        LTU_FLAG
 );
-  //encoding for alu_ctrl
+  //encoding from alu_ctrl
   typedef enum logic [3:0] {ADD, SUB, AND, OR, XOR, SLT, SLTU, SLL, SRL, SRA} ALU_OP;
 
   //Reverse bit ordering. Used in shifter
@@ -21,15 +21,15 @@ module alu_file (
   logic [31:0]  shiftin, shifter, shiftout;
 
   always_comb begin
-    //Generate branch flags
+    //Generate branch flags (is equal to, less than, and less than unsigned)
     EQ_FLAG  = (a == b);
     LT_FLAG  = ($signed(a) < $signed(b));
     LTU_FLAG = (a < b);
 
     /*Shift logic. Condenses SLL, SRL, SRA into one shifter by:
-      Bit reversing input/output if SLL
-      Shifting 33 bits instead of 32, with the MSB being 0 for logical shifts
-      and a[31] for arithmetic shifts */
+      -Bit reversing input/output if SLL
+      -Arithmetic shifting 33 bits instead of 32, with the MSB being 0 for 
+      logical shifts and a[31] for arithmetic shifts */
     shiftin = (alu_ctrl == SLL) ? reverse_bits(a) : a;
     shifter  = $signed( {(alu_ctrl == SRA) & a[31], shiftin} ) >>> b[4:0];
     shiftout = (alu_ctrl == SLL) ? reverse_bits(shifter) : shifter;

@@ -20,11 +20,11 @@ module memory (
   logic [31:0] MEM [1535:0];
 
   always @(posedge clk) begin
-    if(mem_read) mem_rdata <= MEM[mem_addr[12:2]];
+    if (mem_read) mem_rdata <= MEM[mem_addr[12:2]];
 
-    if(mem_wmask[0]) MEM[mem_addr[12:2]][7:0]   <= mem_wdata[7:0];
-    if(mem_wmask[1]) MEM[mem_addr[12:2]][15:8]  <= mem_wdata[15:8];
-    if(mem_wmask[2]) MEM[mem_addr[12:2]][23:16] <= mem_wdata[23:16];
-    if(mem_wmask[3]) MEM[mem_addr[12:2]][31:24] <= mem_wdata[31:24];	
+    if (mem_wmask[0]) MEM[mem_addr[12:2]][7:0]   <= mem_wdata[7:0];
+    if (mem_wmask[1]) MEM[mem_addr[12:2]][15:8]  <= mem_wdata[15:8];
+    if (mem_wmask[2]) MEM[mem_addr[12:2]][23:16] <= mem_wdata[23:16];
+    if (mem_wmask[3]) MEM[mem_addr[12:2]][31:24] <= mem_wdata[31:24];	
   end
 endmodule

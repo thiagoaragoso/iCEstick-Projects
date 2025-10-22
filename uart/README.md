@@ -1,4 +1,4 @@
-## Notes
+## Personal Notes
 My second fpga project. After the leds_clock project, I took time to learn more
 more advanced digital design concepts and standard industry practice, which can
 be seen in improvements to basic syntax and directory organization, more complex
@@ -23,10 +23,10 @@ https://www.youtube.com/@Nandland/
 - sim: Contains testbenches and scripts to run them in ModelSim
 - syn: Contains the constraints file for synthesis.
 
-## Usage + Tips
+## Project Notes + Tips
 - By default, uart_top echoes back any byte it receives.
 - Tested using PuTTY terminal emulator. Set to serial communication with 8 data bits, 1 stop bit, 0 parity bits, and no flow control. Set speed/baud to match UART parameter (default is 115200). Make sure you select the correct serial line/port, as the icestick has two. At least for Windows, this can be found by going to Device Manager -> Ports (COM3 worked for me); if you cannot find it, make sure you have VCP drivers updated/installed https://ftdichip.com/drivers/vcp-drivers/  (FTDI is the chip that converts UART's RS232 protocol into USB)
-- Open source alternatives to iCEcube2 and Diamond Programmer are available (eg Yosis and ICEStorm), but for hobbyists it is very easy to get a free iCEcube2 license by emailing lic_admn@latticesemi.com
+- Open source alternatives to iCEcube2 and Diamond Programmer are available (eg Yosys and ICEStorm), but for hobbyists it is very easy to get a free iCEcube2 license by emailing lic_admn@latticesemi.com
 - When programming the iCEStick, select SPI Serial Flash Programming and specify the exact SPI Flash device: Micron N25Q032 8-pin VDFPN8. The programming file (.bin or .hex) can be found in "/project/project_Implmnt/sbt/outputs/bitmap/"
 - To simulate, navigate to the /sim/ folder in the ModelSim terminal and enter "do sim_top.do"
 
