@@ -2,6 +2,6 @@ A repository for all FPGA programming projects I do on the iCEstick Evaluation K
 
 ## Projects
 
-- risv:        A RISC-V processor design
+- riscv:       A RISC-V processor design
 - uart:        A lightweight UART transceiver
 - leds_clock:  Blinks 4 LEDs, one at time, clockwise, at a rate of 1 blink/second
